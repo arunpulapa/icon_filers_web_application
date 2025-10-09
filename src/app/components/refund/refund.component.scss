@@ -1,0 +1,99 @@
+.refund-section {
+  background: linear-gradient(120deg, #eaf4fe 70%, #f8fafb 100%);
+  min-height: 660px;
+}
+.refund-header img { margin-bottom: 10px; }
+.refund-header h2 { font-size: 2rem; }
+.refund-act-card {
+  background: #f5fafe;
+  border: none;
+  border-radius: 16px;
+  transition: box-shadow 0.17s, background 0.19s;
+  min-height: 120px;
+}
+.refund-act-card:hover {
+  background: #eaf4ff;
+  box-shadow: 0 6px 28px #0d6efd1c;
+  transform: translateY(-2px) scale(1.025);
+}
+.refund-directory {
+  margin-top: 32px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.directory-header {
+  background: #f7fafd;
+  border-bottom: 1px solid #e3eaf7;
+}
+.refund-search {
+  width: 100%;
+  max-width: 320px;
+  margin-top: 8px;
+  display: inline-block;
+}
+.states-list {
+  background: #fff;
+}
+.refund-state-box {
+  border: 1.5px solid #e9f0fb;
+  border-radius: 15px;
+  background: #f9fbff;
+  transition: box-shadow 0.15s, border-color 0.16s, background 0.19s;
+}
+.refund-state-box:hover {
+  background: #eaf8fa;
+  box-shadow: 0 2px 16px #0d6efd10;
+  border-color: #99d7ee;
+}
+.badge.bg-primary-light{background:#e6f2fd;color:#256bfa;}
+.badge.bg-success-subtle{background:#e2fadb;color: #21984b;}
+@media(max-width:991px) {
+  .refund-act-card { min-height: 80px; }
+  .refund-directory { margin-top: 18px; }
+}
+.refund-directory {
+  margin-top: 32px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+.directory-header {
+  background: #f7fafd;
+  border-bottom: 1px solid #e3eaf7;
+}
+.refund-search {
+  width: 100%;
+  max-width: 320px;
+  margin-top: 8px;
+  display: inline-block;
+}
+.states-list { background: #fff; }
+.refund-state-box {
+  border: 1.5px solid #e9f0fb;
+  border-radius: 15px;
+  background: #f9fbff;
+  transition: box-shadow 0.15s, border-color 0.16s, background 0.19s;
+  font-size: 1.07em;
+}
+.refund-state-box:hover {
+  background: #eaf8fa;
+  box-shadow: 0 2px 16px #0d6efd10;
+  border-color: #99d7ee;
+}
+.taxfree-box {
+  background: linear-gradient(90deg,#e9ffe7 50%,#f9fbff 100%) !important;
+  border: 1.5px solid #8ee1a2 !important;
+}
+.badge.bg-success-subtle {
+  background: #e2fadb;
+  color: #21984b;
+}
+.state-link {
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 1em;
+}
+@media(max-width:991px) {
+  .refund-directory { margin-top: 16px; }
+  .refund-state-box { font-size: 1em;}
+}

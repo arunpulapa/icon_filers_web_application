@@ -1,0 +1,117 @@
+/* GENERAL */
+.container { max-width: 1200px; margin: 0 auto; }
+.card { transition: box-shadow 0.3s, transform 0.2s; }
+.card:hover { transform: translateY(-3px) scale(1.012); }
+
+/* HERO SECTION */
+.home-hero { min-height: 90vh; margin-top: 22px; }
+.headline { font-size:2.9rem; font-weight:700; position:relative; color:#183153; margin-bottom:24px; }
+.headline .decor-line { display:block; margin-top:10px; width:60px; height:4px; background:linear-gradient(120deg,#0d6efd,#3e91fa 80%); border-radius:10px; }
+.subtitle { font-size:1.19rem; color:#202d38; margin-bottom:26px; letter-spacing:0.02em; }
+.hero-btn { font-weight:600; letter-spacing:0.5px; border-radius:8px; }
+.hero-btn:hover { transform: translateY(-2px) scale(1.04); box-shadow:0 2px 24px #0d6efd25; }
+.hero-image img { max-width:420px; border-radius:22px; box-shadow:0 8px 38px rgba(60,64,67,0.17); }
+.animate-img img:hover { box-shadow:0 16px 44px rgba(60,64,67,0.25); }
+.login-card { background:#fff; border:none; }
+.login-card .form-control { border-radius:8px; background:#f8fafc; border:1px solid #e0e8ee; font-size:1rem; }
+.blue-card { background:#deedfb; border:none; box-shadow:0 2px 18px #21588519; }
+.free-banner .free-text { font-size:2.1rem; color:#0d6efd; }
+.text-gradient { background:linear-gradient(90deg,#2b78fd 50%,#25adef 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.text-gradient-2 { background:linear-gradient(90deg,#045fb4 30%,#00b3d9 100%); }
+
+/* WAYS TO FILE */
+.ways-section { background:#f6f8fa; margin:0 auto; }
+.ways-title { font-size:2rem; font-weight:500; color:#25324d; margin-bottom:36px; text-align:center; }
+.ways-card { background:#fff; border-radius:20px; padding:24px 0 10px 0; min-height:410px; box-shadow:0 2px 18px #14223b19; }
+.card-img-box { position:relative; }
+.expert-img { width:100%; height:300px; object-fit:cover; border-radius:13px; box-shadow:0 2px 16px #14223b12; }
+.ways-badge { font-size:0.97rem; position:absolute; left:50%; transform:translateX(-50%); border-radius:22px; bottom:12px; width:max-content; }
+.ways-link { text-decoration:underline; font-size:1.02em; }
+.tm { font-size:0.70em; vertical-align:super; color:#8a8a8a; }
+
+/* TAX HELP SECTION */
+.tax-help-section { background:#f5f7f3; }
+.tax-help-title { font-size:2.2rem; font-weight:400; color:#202338; margin-bottom:44px; text-align:center; }
+.tax-help-card { background:#fff; border:1.5px solid #ebebeb; border-radius:18px; width:90%; padding:2rem 1.5rem 1.35rem 1.5rem; box-shadow:0 2px 12px #11131911; text-align:center; }
+.tax-help-card:hover { box-shadow:0 8px 28px #3e7ffd13; border-color:#cde5fa; }
+.tax-link { color:#265db6 !important; font-size:1.05em; text-decoration:underline; margin-top:18px; display:inline-block; }
+
+/* CONTACT SECTION */
+
+
+/* RESPONSIVE */
+@media (max-width:991px) {
+  .home-hero { min-height:unset; padding-top:2rem; }
+  .hero-image img { display:none; }
+  .ways-card, .tax-help-card { min-height:auto; }
+  .free-banner { display:none !important; }
+}
+
+
+
+.blink-icon {
+  animation: blinkEffect 0.8s infinite alternate;
+}
+
+@keyframes blinkEffect {
+  0% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px #ffdd56);
+    color: #ffe066;
+  }
+  60% {
+    opacity: 0.55;
+    filter: drop-shadow(0 0 18px #ffe066);
+    color: #ffd700;
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px #ffdd56);
+    color: #ffe066;
+  }
+}
+
+
+.btn-signin {
+  position: relative;
+  background: linear-gradient(120deg, #256bfa 55%, #44c3e5 100%);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 0 16px 0 #44c3e661, 0 2px 16px #256bfa1c;
+  animation: slowGlow 2.2s infinite alternate;
+  transition: box-shadow 0.22s, background 0.22s, transform 0.13s;
+}
+
+@keyframes slowGlow {
+  0% {
+    box-shadow: 0 0 16px #44c3e661, 0 2px 16px #256bfa1c;
+  }
+  50% {
+    box-shadow: 0 0 38px #44c3e6bb, 0 6px 28px #256bfa45;
+    background: linear-gradient(120deg, #44c3e5 28%, #256bfa 72%);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 16px #44c3e661, 0 2px 16px #256bfa1c;
+  }
+}
+
+/* Optional: On hover, make glow even stronger and speedier */
+.hero-btn:hover, .btn-primary:hover, .btn-signin:hover {
+  animation: slowGlowHover 0.8s infinite alternate;
+  box-shadow: 0 0 42px #44c3e6cc, 0 8px 32px #256bfa68;
+  transform: scale(1.06);
+}
+
+@keyframes slowGlowHover {
+  0% {
+    box-shadow: 0 0 24px #44c3e6cc, 0 2px 26px #256bfa68;
+    background: linear-gradient(125deg, #44c3e5 32%, #256bfa 68%);
+  }
+  100% {
+    box-shadow: 0 0 38px #44c3e6ff, 0 8px 48px #256bfa80;
+    background: linear-gradient(120deg, #256bfa 15%, #44c3e5 85%);
+  }
+}

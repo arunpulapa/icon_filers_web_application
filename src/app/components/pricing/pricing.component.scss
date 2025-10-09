@@ -1,0 +1,60 @@
+.pricing-section {
+  background: linear-gradient(120deg, #f0faff 72%, #eef5fd 100%);
+  border-radius: 32px;
+  box-shadow: 0 4px 32px #18315317;
+}
+.pricing-header h2 {
+  font-size: 2.3rem;
+  letter-spacing: .01em;
+}
+.pricing-table {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  font-size: 1.07em;
+  box-shadow: 0 4px 18px #256bfa15;
+  transition: box-shadow .18s;
+}
+.pricing-table tbody tr {
+  border-bottom: 1.5px solid #eef4fe;
+  transition: background .14s;
+}
+.pricing-table tbody tr:hover {
+  background: #e7f7ff;
+}
+.pricing-table th, .pricing-table td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border: none;
+}
+.free-row {
+  background: #e7ffea !important;
+  color: #2ea272 !important;
+  font-size: 1.05em;
+  animation: freeGlow 2.7s infinite alternate;
+}
+@keyframes freeGlow {
+  0%{ box-shadow: 0 0 0 #2ea27222;}
+  50%{ box-shadow: 0 0 34px #93e39a88;}
+  100%{ box-shadow: 0 0 0 #2ea27222;}
+}
+
+.pricing-footer {
+  margin-top: 24px;
+}
+.pricing-footer .btn-outline-primary {
+  border-width: 2px;
+  font-size: 1.11em;
+  letter-spacing: .02em;
+  transition: box-shadow .19s, border-color .18s;
+}
+.pricing-footer .btn-outline-primary:hover {
+  box-shadow: 0 2px 16px #256bfa26;
+  border-color: #256bfa;
+  background: #eaf4fe;
+}
+@media (max-width:991px){
+  .pricing-section { border-radius: 12px; padding-left:0; padding-right:0;}
+  .pricing-header h2 { font-size: 1.47em;}
+  .pricing-table { font-size: 1em;}
+}

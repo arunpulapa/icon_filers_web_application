@@ -1,0 +1,57 @@
+.contact-teaser-section {
+  background: linear-gradient(120deg, #28b7df 60%, #244b88 100%);
+  min-height: 210px;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -4px 34px #244b8824;
+}
+.contact-btn {
+  background: #fff;
+  color: #244b88;
+  border-radius: 2em;
+  padding: 15px 35px;
+  font-size: 1.12em;
+  letter-spacing: .6px;
+  box-shadow: 0 2px 24px #244b88a1;
+  border: none;
+  transition: background 0.15s, color 0.18s, box-shadow 0.18s;
+}
+.contact-btn:hover, .contact-btn:focus {
+  background: #244b88;
+  color: #fff;
+  box-shadow: 0 6px 20px #244b88ac;
+  text-decoration: none;
+}
+.footer-section-modern {
+  background: linear-gradient(120deg,#f6faff 80%,#eaf4fe 100%);
+  color: #233149;
+  font-size: 1.09em;
+  border-radius: 35px 35px 0 0;
+  box-shadow: 0 -8px 46px #244b8830;
+}
+.footer-logo-img {
+  width: 100px; height: 48px; border-radius:10px;
+  box-shadow: 0 2px 14px #27c0e671;
+}
+.footer-logo-text { color: #215887; font-size: 2.2rem; }
+.footer-title { color: #29508e; font-size: 1.12em;}
+.footer-list, .footer-contact-list { list-style:none; padding:0; margin:0; font-size:1.03em;}
+.footer-list li, .footer-contact-list li { margin-bottom:.7rem; }
+.footer-list a { color:#264375; font-weight:500; text-decoration:none; transition:color 0.14s;}
+.footer-list a:hover { color:#20b5e1; text-decoration:underline;}
+.footer-contact-list a { color: #088af7; font-weight:500; text-decoration:underline; }
+.footer-social { display:flex; align-items:center; gap:10px; justify-content:center;}
+.footer-social-ico { display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; color:#256bfa; font-size:1.35em; background:#eaf4fe; box-shadow:0 2px 5px #44c3e657; }
+.footer-social-ico:hover { background:#256bfa; color:#fff; box-shadow:0 8px 24px #256bfa27; }
+.footer-main-cta { margin-top:10px; background:#256bfa; color:#fff !important; font-size:1em; box-shadow:0 2px 16px #256bfa34;}
+.footer-main-cta:hover { background:#045fb4; color:#fff; box-shadow:0 6px 24px #256bfa23;}
+.footer-hr { border-color:#e1ecfb; }
+
+@media (max-width: 991px) {
+  .contact-teaser-section, .footer-section-modern { border-radius: 20px 20px 0 0; }
+  .footer-section-modern { padding-bottom: 12px;}
+  .footer-logo-img { margin:0 auto 12px auto; display:block;}
+  .footer-social, .footer-contact-list { justify-content:center !important; }
+}
+@media (max-width: 767px) {
+  .contact-btn { width: 100%; padding:14px 0; font-size:1em;}
+}
