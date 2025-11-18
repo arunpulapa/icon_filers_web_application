@@ -7,36 +7,80 @@
           <div class="login-top-icon">
             <i class="bi bi-shield-lock-fill fs-1 text-primary"></i>
           </div>
+
           <div class="text-center mb-4">
-           
             <h2 class="fw-bold mb-1 text-gradient-login">Welcome Back</h2>
             <div class="small text-muted">Sign in to your secure tax account</div>
           </div>
-          <form autocomplete="on">
+
+          <!-- reactive form -->
+          <form [formGroup]="loginForm" (ngSubmit)="submit()" autocomplete="on" novalidate>
             <div class="mb-3 form-floating">
-              <input type="text" class="form-control login-glow" id="loginEmail" placeholder="Email or Phone" required>
+              <input formControlName="email" type="text" class="form-control login-glow" id="loginEmail" placeholder="Email or Phone">
               <label for="loginEmail"><i class="bi bi-person-circle me-1"></i> Email / Phone</label>
+             <div *ngIf="f['email'].invalid && (f['email'].touched || f['email'].dirty)" class="invalid-feedback">
+              
+                Email or phone is required.
+              </div>
             </div>
+
             <div class="mb-3 form-floating">
-              <input type="password" class="form-control login-glow" id="loginPassword" placeholder="Password" required>
+              <input formControlName="password" type="password" class="form-control login-glow" id="loginPassword" placeholder="Password">
               <label for="loginPassword"><i class="bi bi-key-fill me-1"></i> Password</label>
+              <div *ngIf="f['password'].invalid && (f['password'].touched || f['password'].dirty)" class="invalid-feedback">
+                Password is required (min 6 chars).
+              </div>
             </div>
+
             <div class="d-flex justify-content-between align-items-center mb-2">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="rememberLogin">
+                <input formControlName="remember" class="form-check-input" type="checkbox" id="rememberLogin">
                 <label class="form-check-label small text-muted" for="rememberLogin">Remember me</label>
               </div>
               <a href="#" class="text-primary small fw-semibold login-link">Forgot Password?</a>
             </div>
-            <button type="submit" class="btn btn-gradient-login px-4 py-2 w-100 rounded-pill mb-2">
-              <i class="bi bi-door-open me-2"></i> Sign In
+
+            <button type="submit" class="btn btn-gradient-login px-4 py-2 w-100 rounded-pill mb-2" [disabled]="loading">
+              <ng-container *ngIf="!loading">
+                <i class="bi bi-door-open me-2"></i> Sign In
+              </ng-container>
+              <ng-container *ngIf="loading">
+                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Signing in...
+              </ng-container>
             </button>
           </form>
+
           <div class="text-center mt-4">
             <span class="text-muted small">New to Icon Tax?</span>
-            <a href="#" class="fw-bold login-link ms-2">Create an Account</a>
+            <a href="/register" class="fw-bold login-link ms-2">Create an Account</a>
           </div>
+
+          <!-- INLINE VERIFIED INDICATOR (animated) -->
+          <!-- <div class="verified-indicator mt-3" *ngIf="showVerifiedIndicator">
+            <div class="check-wrap">
+              <span class="checkmark">✔</span>
+            </div>
+            <div class="verified-text">User verified</div>
+          </div> -->
+
+          <!-- small warning line below card -->
+          <div class="internal-warning mt-3 text-center text-warning" *ngIf="showVerifiedIndicator">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            <span>Internal site on progress</span>
+          </div>
+
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST (in-component) -->
+  <div class="position-fixed top-0 end-0 p-3" style="z-index: 20000;">
+    <div *ngIf="toastVisible" class="app-toast toast-slide" [ngClass]="toastType === 'success' ? 'toast-success' : 'toast-error'">
+      <div class="toast-content">
+        <strong *ngIf="toastType === 'success'">Success</strong>
+        <strong *ngIf="toastType === 'error'">Error</strong>
+        <div class="toast-message">{{ toastMessage }}</div>
       </div>
     </div>
   </div>

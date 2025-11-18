@@ -48,6 +48,11 @@
 }
 
 
+.invalid-feedback { display:block; }
+.login-card { max-width: 480px; }
+.toast { min-width: 260px; border-radius: 8px; padding: 0.5rem; }
+
+
 
 .blink-icon {
   animation: blinkEffect 0.8s infinite alternate;
@@ -114,4 +119,20 @@
     box-shadow: 0 0 38px #44c3e6ff, 0 8px 48px #256bfa80;
     background: linear-gradient(120deg, #256bfa 15%, #44c3e5 85%);
   }
+}
+/* GLOBAL TOAST ALWAYS ON TOP */
+.global-toast-wrapper {
+  position: fixed !important;
+  top: 10px !important;
+  right: 10px !important;
+  z-index: 999999999 !important; /* TOP MOST */
+  pointer-events: none;          /* does not block UI clicks */
+}
+
+.global-toast-wrapper .toast {
+  pointer-events: auto;          /* toast clickable */
+  min-width: 250px;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }

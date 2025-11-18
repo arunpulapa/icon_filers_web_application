@@ -72,3 +72,87 @@
   .login-section-login-screen { background-size: cover; }
   .login-card-login-screen { padding: 18px 6px 16px 6px; border-radius: 16px;}
 }
+
+
+
+/* ------------------------------
+   TOAST CONTAINER
+------------------------------ */
+.app-toast {
+  min-width: 260px;
+  max-width: 320px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  color: #fff;
+  font-family: inherit;
+  box-shadow: 0 10px 32px rgba(20, 25, 48, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(-20px) scale(0.96);
+  animation: toastSlideDown 0.35s cubic-bezier(.22,1.2,.36,1) forwards;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* SUCCESS TOAST */
+.toast-success {
+  background: linear-gradient(135deg, #16a34a 0%, #0ea5e9 100%);
+}
+
+/* ERROR TOAST */
+.toast-error {
+  background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+}
+
+/* TEXT & LAYOUT */
+.toast-content strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+
+.toast-message {
+  font-size: 0.92rem;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+/* ------------------------------
+   ANIMATIONS
+------------------------------ */
+@keyframes toastSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Fade-out if you want autohide animation */
+@keyframes toastFadeOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(-10px) scale(.96); }
+}
+
+/* ------------------------------
+   POSITION WRAPPER
+------------------------------ */
+.toast-wrapper {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 50000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Optional: stack multiple toasts */
+.app-toast + .app-toast {
+  margin-top: 12px;
+}
