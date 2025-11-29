@@ -1,48 +1,95 @@
 <section class="aboutus-section-adv py-5">
   <div class="container position-relative">
     <div class="aboutus-bg"></div>
+
     <div class="row align-items-center gy-5">
-      <!-- Left: Profile/Team Image Card -->
-      <div class="col-lg-6 d-flex justify-content-center">
-        <div class="aboutus-img-card shadow-lg bg-white rounded-4 position-relative animate-slide" style="overflow: hidden;">
-          <img src="https://i.pinimg.com/736x/f9/13/1f/f9131ff8ff1b2e7b97dd41d12b18c979.jpg"
-               alt="Icon Tax Team" class="team-img w-100">
-          <span class="img-caption text-primary fw-semibold px-3 py-1 rounded-4 shadow position-absolute">Your Trusted Tax Experts</span>
+      <!-- LEFT: Image / Visual -->
+      <div class="col-lg-5 d-flex justify-content-center">
+        <div class="aboutus-img-card shadow-lg bg-white rounded-4 position-relative animate-slide">
+          <img
+            src="https://i.pinimg.com/736x/f9/13/1f/f9131ff8ff1b2e7b97dd41d12b18c979.jpg"
+            alt="Icon Tax Team"
+            class="team-img w-100"
+          />
+
+          <!-- Floating caption -->
+          <span class="img-caption text-primary fw-semibold px-3 py-1 rounded-4 shadow position-absolute">
+            Your Trusted Tax Experts
+          </span>
+
+          <!-- Small stats row -->
+          <!-- <div class="aboutus-stats d-flex flex-wrap gap-2 position-absolute">
+            <span class="badge stat-pill">
+              <i class="bi bi-people-fill me-1"></i> 2K+ clients
+            </span>
+            <span class="badge stat-pill">
+              <i class="bi bi-graph-up-arrow me-1"></i> 15+ years experience
+            </span>
+          </div> -->
         </div>
       </div>
-      <!-- Right: Text Content Card -->
-      <div class="col-lg-6">
-        <div class="aboutus-content-card bg-white rounded-4 shadow-lg px-5 py-4 animate-fade">
-          <h2 class="mb-2 fw-bold text-primary"><i class="bi bi-briefcase-fill me-1"></i> About Us</h2>
+
+      <!-- RIGHT: Content -->
+      <div class="col-lg-7">
+        <div class="aboutus-content-card bg-white rounded-4 shadow-lg px-4 px-lg-5 py-4 animate-fade">
+          <h2 class="mb-2 fw-bold text-primary">
+            <i class="bi bi-briefcase-fill me-2"></i> About Icon Tax
+          </h2>
+
           <p class="lead text-dark mb-3 fst-italic">
-            “Icon Tax is a team of dedicated and experienced professionals committed to delivering quality service to our esteemed clients.”
+            “Icon Tax is a team of dedicated and experienced professionals committed to delivering
+            quality service to our esteemed clients.”
           </p>
-          <div class="row g-3">
+
+          <!-- Two highlight columns -->
+          <div class="row g-3 mb-3">
             <div class="col-12 col-md-6">
-              <div class="aboutus-highlight p-3 rounded-3 bg-light h-100 d-flex flex-column justify-content-center">
-                <div><i class="bi bi-lightbulb-fill me-2 text-warning"></i>
-                  <strong>Smart Icon Reach</strong>
+              <div class="aboutus-highlight p-3 rounded-3 h-100">
+                <div class="d-flex align-items-start mb-1">
+                  <i class="bi bi-lightbulb-fill me-2 text-warning fs-5"></i>
+                  <div class="fw-semibold">Smart Icon Reach</div>
                 </div>
-                <small>We help clients worldwide realize outsourcing benefits and gain a lasting competitive edge.</small>
+                <small class="text-muted">
+                  We help clients across the globe realize outsourcing benefits and gain a lasting
+                  competitive edge with reliable tax and compliance support.
+                </small>
               </div>
             </div>
+
             <div class="col-12 col-md-6">
-              <div class="aboutus-highlight p-3 rounded-3 bg-light h-100 d-flex flex-column justify-content-center">
-                <div><i class="bi bi-card-checklist me-2 text-info"></i>
-                  <strong>Comprehensive Tax Services</strong>
+              <div class="aboutus-highlight p-3 rounded-3 h-100">
+                <div class="d-flex align-items-start mb-1">
+                  <i class="bi bi-card-checklist me-2 text-info fs-5"></i>
+                  <div class="fw-semibold">Comprehensive Tax Services</div>
                 </div>
-                <small>Planning, preparation, filing, ITIN, FBAR, FATCA, W4, expat/inpat advisory—US & India experts.</small>
+                <small class="text-muted">
+                  Planning, preparation, filing, ITIN, FBAR, FATCA, W-4, expat &amp; inpat advisory
+                  — specialists in both U.S. and India tax systems.
+                </small>
               </div>
             </div>
           </div>
-          <div class="aboutus-detail mt-4">
-            <i class="bi bi-award-fill me-2 text-success"></i>
-            <span class="fw-semibold">Scrupulous tax return preparation:</span>
-            <span class="text-muted">Our process uses real scenarios and follows strict IRS standards, so you’re always secure with Icon Tax.</span>
+
+          <!-- Trust / quality line -->
+          <div class="aboutus-detail d-flex align-items-start gap-2">
+            <i class="bi bi-award-fill text-success fs-5 mt-1"></i>
+            <div>
+              <span class="fw-semibold d-block">Scrupulous tax return preparation</span>
+              <span class="text-muted">
+                Real-world scenario checks and strict adherence to IRS standards mean your return
+                is prepared with care, accuracy, and complete confidentiality.
+              </span>
+            </div>
           </div>
+
+          <!-- CTA -->
           <div class="mt-4 d-flex flex-wrap align-items-center gap-2">
-            <a href="/contact-us" class="btn btn-primary px-4 py-2 rounded-pill glow-btn">Contact Our Team</a>
-            <span class="text-primary fw-bold ms-2 slide-in-cta">Partner for stress-free tax expertise!</span>
+            <a routerLink="/contact-us" class="btn btn-primary px-4 py-2 rounded-pill glow-btn">
+              Contact Our Team
+            </a>
+            <span class="text-primary fw-bold slide-in-cta">
+              Partner with us for stress-free tax expertise.
+            </span>
           </div>
         </div>
       </div>

@@ -24,6 +24,15 @@ import { FBARFATCAComplianceComponent } from './components/services-tax/fbar-fat
 import { AmendmentFilingComponent } from './components/services-tax/amendment-filing/amendment-filing.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ResidentsComponent } from './components/services-tax/residents/residents.component';
+import { NonresidentsComponent } from './components/services-tax/nonresidents/nonresidents.component';
+import { PartnershipComponent } from './components/services-tax/partnership/partnership.component';
+import { ForeignTaxCreditsComponent } from './components/services-tax/foreign-tax-credits/foreign-tax-credits.component';
+import { ForeignOwnedUSEntitiesComponent } from './components/services-tax/foreign-owned-us-entities/foreign-owned-us-entities.component';
+import { PayrollServicesComponent } from './components/services-tax/payroll-services/payroll-services.component';
+import { SalesTaxComponent } from './components/services-tax/sales-tax/sales-tax.component';
+import { AnnualReportingComponent } from './components/services-tax/annual-reporting/annual-reporting.component';
+import { LLCRegistrationComponent } from './components/services-tax/llc-registration/llc-registration.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +55,16 @@ import { HttpClientModule } from '@angular/common/http';
     ITINPreparationComponent,
     AdvancedTaxPlanningComponent,
     FBARFATCAComplianceComponent,
-    AmendmentFilingComponent
+    AmendmentFilingComponent,
+    ResidentsComponent,
+    NonresidentsComponent,
+    PartnershipComponent,
+    ForeignTaxCreditsComponent,
+    ForeignOwnedUSEntitiesComponent,
+    PayrollServicesComponent,
+    SalesTaxComponent,
+    AnnualReportingComponent,
+    LLCRegistrationComponent
   ],
   imports: [
     BrowserModule,

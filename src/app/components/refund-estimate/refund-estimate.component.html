@@ -10,65 +10,148 @@
           Find out your potential refund—just enter your tax details. Results are instant, no login needed!
         </p>
         <ul class="refund-hints mb-2">
-          <li>IRS-compliant estimate</li>
-          <li>Secure & confidential</li>
-          <li>Works for single, married, and business filers</li>
+          <li>Approximate, IRS-style estimate</li>
+          <li>Secure &amp; confidential</li>
+          <li>Works for single, married, and small business owners</li>
         </ul>
       </div>
       <div class="col-lg-5 text-center">
-        <img src="https://i.pinimg.com/1200x/a5/48/f6/a548f65fdaee05444303f3382281e60f.jpg"
-             alt="Refund Estimate"
-             class="refund-illustration"
-             style="max-width:400px;">
+        <img
+          src="https://i.pinimg.com/1200x/a5/48/f6/a548f65fdaee05444303f3382281e60f.jpg"
+          alt="Refund Estimate"
+          class="refund-illustration"
+          style="max-width: 400px"
+        />
       </div>
     </div>
 
     <!-- Tax Estimator Card -->
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <div class="estimator-card p-4 rounded-4 shadow-lg bg-white">
-          <form>
+        <div class="estimator-card p-4 rounded-4 shadow-lg bg-white refund-form-card">
+          <form (ngSubmit)="onEstimate()" #refundForm="ngForm">
             <div class="row g-4">
               <div class="col-md-6">
-                <label class="form-label fw-semibold text-primary">Annual Income <i class="bi bi-info-circle text-muted" title="Total gross income for year"></i></label>
-                <input type="number" class="form-control estimator-input" placeholder="Enter your income" min="0" required>
+                <label class="form-label fw-semibold text-primary">
+                  Annual Income
+                  <i
+                    class="bi bi-info-circle text-muted"
+                    title="Total gross income for the year"
+                  ></i>
+                </label>
+                <input
+                  type="number"
+                  class="form-control form-refund-input"
+                  placeholder="Enter your income"
+                  min="0"
+                  required
+                  name="income"
+                  [(ngModel)]="model.income"
+                  (ngModelChange)="onEstimate()"
+                />
               </div>
+
               <div class="col-md-6">
                 <label class="form-label fw-semibold text-primary">State</label>
-                <select class="form-control estimator-input">
+                <select
+                  class="form-control form-refund-input"
+                  name="state"
+                  [(ngModel)]="model.state"
+                  (ngModelChange)="onEstimate()"
+                >
                   <option value="">Select...</option>
-                  <option>New Jersey</option>
-                  <option>California</option>
-                  <option>Texas</option>
-                  <!-- etc. -->
+                  <option value="NJ">New Jersey</option>
+                  <option value="CA">California</option>
+                  <option value="TX">Texas</option>
+                  <option value="NY">New York</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
+
               <div class="col-md-6">
-                <label class="form-label fw-semibold text-primary">Deductions <i class="bi bi-info-circle text-muted" title="Add your standard or itemized deductions"></i></label>
-                <input type="number" class="form-control estimator-input" placeholder="Enter deductions" min="0">
+                <label class="form-label fw-semibold text-primary">
+                  Deductions
+                  <i
+                    class="bi bi-info-circle text-muted"
+                    title="Add your itemized deductions if higher than standard deduction"
+                  ></i>
+                </label>
+                <input
+                  type="number"
+                  class="form-control form-refund-input"
+                  placeholder="Enter deductions (optional)"
+                  min="0"
+                  name="deductions"
+                  [(ngModel)]="model.deductions"
+                  (ngModelChange)="onEstimate()"
+                />
+                <small class="text-muted">
+                  If left blank, we'll use an approximate standard deduction.
+                </small>
               </div>
+
               <div class="col-md-6">
-                <label class="form-label fw-semibold text-primary">Tax Credits <i class="bi bi-info-circle text-muted" title="Child Tax Credit, EITC, etc."></i></label>
-                <input type="number" class="form-control estimator-input" placeholder="Total credits" min="0">
+                <label class="form-label fw-semibold text-primary">
+                  Tax Credits
+                  <i
+                    class="bi bi-info-circle text-muted"
+                    title="Child Tax Credit, EITC, education credits, etc."
+                  ></i>
+                </label>
+                <input
+                  type="number"
+                  class="form-control form-refund-input"
+                  placeholder="Total credits"
+                  min="0"
+                  name="credits"
+                  [(ngModel)]="model.credits"
+                  (ngModelChange)="onEstimate()"
+                />
               </div>
+
               <div class="col-md-6">
-                <label class="form-label fw-semibold text-primary">Tax Paid/Withheld</label>
-                <input type="number" class="form-control estimator-input" placeholder="From W-2/paid so far" min="0">
+                <label class="form-label fw-semibold text-primary">
+                  Tax Paid / Withheld
+                </label>
+                <input
+                  type="number"
+                  class="form-control form-refund-input"
+                  placeholder="From W-2 / estimates paid"
+                  min="0"
+                  required
+                  name="taxPaid"
+                  [(ngModel)]="model.taxPaid"
+                  (ngModelChange)="onEstimate()"
+                />
               </div>
+
               <div class="col-md-6">
-                <label class="form-label fw-semibold text-primary">Filing Status</label>
-                <select class="form-control estimator-input">
+                <label class="form-label fw-semibold text-primary">
+                  Filing Status
+                </label>
+                <select
+                  class="form-control form-refund-input"
+                  required
+                  name="filingStatus"
+                  [(ngModel)]="model.filingStatus"
+                  (ngModelChange)="onEstimate()"
+                >
                   <option value="">Select...</option>
-                  <option>Single</option>
-                  <option>Married Filing Jointly</option>
-                  <option>Head of Household</option>
-                  <option>Business</option>
+                  <option value="single">Single</option>
+                  <option value="married">Married Filing Jointly</option>
+                  <option value="hoh">Head of Household</option>
+                  <option value="business">Business Owner (Schedule C/S-Corp)</option>
                 </select>
               </div>
             </div>
+
             <div class="d-flex gap-3 mt-4 justify-content-end">
-              <button type="submit" class="btn btn-gradient-refund px-5 py-2 rounded-pill fw-bold">
-                <i class="bi bi-calculator me-2"></i> Estimate My Refund
+              <button
+                type="submit"
+                class="btn btn-gradient-refund px-5 py-2 rounded-pill fw-bold"
+              >
+                <i class="bi bi-calculator me-2"></i>
+                Estimate My Refund
               </button>
             </div>
           </form>
@@ -77,28 +160,47 @@
     </div>
 
     <!-- Refund Result and Breakdown -->
-    <div class="row justify-content-center mt-4">
+    <div class="row justify-content-center mt-4" *ngIf="summary.refundType !== 'na'">
       <div class="col-lg-8">
-        <div class="result-card p-4 rounded-4 shadow bg-light">
-          <h4 class="fw-bold text-success">
-            <i class="bi bi-currency-dollar"></i> Your estimated refund: <span id="refundAmount">$2,500</span>
+        <div class="result-card p-4 rounded-4 shadow bg-light refund-result-card">
+          <h4 class="fw-bold" [ngClass]="summary.refundType === 'refund' ? 'text-success' : 'text-danger'">
+            <i class="bi bi-currency-dollar"></i>
+            <ng-container *ngIf="summary.refundType === 'refund'; else oweBlock">
+              Your estimated refund:
+            </ng-container>
+            <ng-template #oweBlock>
+              You may owe:
+            </ng-template>
+            <span>{{ summary.refundAmount | currency : 'USD' : 'symbol' : '1.0-0' }}</span>
           </h4>
+
           <div class="mt-3 px-lg-5">
             <div class="row">
               <div class="col-12 col-md-6 mb-2 text-start">
-                <span class="fw-semibold text-dark">Income:</span> $45,000<br>
-                <span class="fw-semibold text-dark">Deductions:</span> $10,000<br>
-                <span class="fw-semibold text-dark">Tax Credits:</span> $2,000<br>
+                <span class="fw-semibold text-dark">Income:</span>
+                {{ model.income || 0 | currency : 'USD' : 'symbol' : '1.0-0' }}<br />
+                <span class="fw-semibold text-dark">Standard Deduction Used:</span>
+                {{ summary.standardDeduction | currency : 'USD' : 'symbol' : '1.0-0' }}<br />
+                <span class="fw-semibold text-dark">Additional Deductions:</span>
+                {{ summary.extraDeductions | currency : 'USD' : 'symbol' : '1.0-0' }}<br />
+                <span class="fw-semibold text-dark">Taxable Income:</span>
+                {{ summary.taxableIncome | currency : 'USD' : 'symbol' : '1.0-0' }}
               </div>
               <div class="col-12 col-md-6 mb-2 text-start">
-                <span class="fw-semibold text-dark">Paid/Withheld:</span> $3,800<br>
-                <span class="fw-semibold text-dark">State:</span> New Jersey<br>
-                <span class="fw-semibold text-dark">Filing Status:</span> Single
+                <span class="fw-semibold text-dark">Calculated Tax:</span>
+                {{ summary.estimatedTax | currency : 'USD' : 'symbol' : '1.0-0' }}<br />
+                <span class="fw-semibold text-dark">Credits:</span>
+                {{ summary.creditsUsed | currency : 'USD' : 'symbol' : '1.0-0' }}<br />
+                <span class="fw-semibold text-dark">Tax After Credits:</span>
+                {{ summary.taxAfterCredits | currency : 'USD' : 'symbol' : '1.0-0' }}<br />
+                <span class="fw-semibold text-dark">Paid / Withheld:</span>
+                {{ model.taxPaid || 0 | currency : 'USD' : 'symbol' : '1.0-0' }}
               </div>
             </div>
-            <hr>
+            <hr />
             <div class="text-muted small">
-              * Estimation subject to IRS rules and eligibility. Actual refund may vary.
+              * This is a simplified estimate based on approximate brackets and deductions. Actual refund may vary
+              based on full IRS rules and your complete situation.
             </div>
           </div>
         </div>
@@ -109,15 +211,19 @@
     <div class="row justify-content-center mt-4">
       <div class="col-lg-8">
         <div class="faq-card p-3 px-md-4 py-md-4 rounded-4 shadow bg-white">
-          <h6 class="fw-bold mb-2 text-gradient-refund"><i class="bi bi-question-circle me-2"></i> Refund Calculator Tips</h6>
+          <h6 class="fw-bold mb-2 text-gradient-refund">
+            <i class="bi bi-question-circle me-2"></i>
+            Refund Calculator Tips
+          </h6>
           <ul class="mb-2 refund-hints">
-            <li>Your refund depends on accurate information—double-check entries</li>
-            <li>Include all credits (EITC, CTC, Saver’s Credit)</li>
-            <li>If you have dependents, enter credits even if not asked directly</li>
-            <li>Business filers: include estimated quarterly payments for the year</li>
+            <li>Use your latest paystubs or last year’s return for reference.</li>
+            <li>Include all major credits (Child Tax Credit, EITC, education credits).</li>
+            <li>If you run a business, include estimated quarterly payments as “Tax Paid”.</li>
+            <li>For a more accurate review, you can send us your documents securely.</li>
           </ul>
           <div class="small text-muted">
-            Need expert help? <a href="/contact-us" class="glow-cta-link">Contact our tax team</a>
+            Need expert help?
+            <a routerLink="/contact-us" class="glow-cta-link">Contact our tax team</a>
           </div>
         </div>
       </div>

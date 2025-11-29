@@ -15,8 +15,11 @@
 <nav class="app-navbar" [class.scrolled]="isScrolled" role="navigation" aria-label="Main navigation">
   <div class="nav-inner container-fluid d-flex align-items-center justify-content-between">
     <!-- Brand / Logo -->
-    <div class="brand d-flex align-items-center" routerLink="/" (click)="navigateTo('/')">
-      <img src="../../../assets/iconlogo.jpg" style="width: 150px;height: 50px;" alt="Icon Tax" class="logo me-2">
+    <div class="brand d-flex align-items-center" routerLink="/" (click)="gotoAndClose('/home')">
+      <img src="../../../assets/iconlogo.jpg"
+           style="width: 150px; height: 50px;"
+           alt="Icon Tax"
+           class="logo me-2">
     </div>
 
     <!-- Mobile Toggle -->
@@ -31,37 +34,125 @@
     <!-- Nav Links -->
     <div class="nav-links d-flex align-items-center" [class.open]="!isCollapsed">
       <ul class="links-left d-flex flex-column flex-lg-row align-items-lg-center">
-        <li><a routerLink="/" (click)="navigateTo('/')" class="nav-link">HOME</a></li>
-        <li><a routerLink="/about-us" (click)="navigateTo('/about-us')" class="nav-link">ABOUT US</a></li>
-
-        <!-- Services Dropdown -->
-        <li class="dropdown" tabindex="0" [class.open]="servicesOpen">
-          <a class="drop-toggle nav-link" (click)="servicesOpen = !servicesOpen" role="button" aria-haspopup="true" aria-expanded="false">
-            SERVICES<i class="bi bi-caret-down-fill"></i>
-          </a>
-          <ul class="dropdown-menu shadow" [class.show]="servicesOpen">
-            <li class="header">Tax & Compliance</li>
-            <li><a (click)="navigateTo('/federal-state-filing')" class="dropdown-item">Federal & State Filing</a></li>
-            <li><a (click)="navigateTo('/tax-representation')" class="dropdown-item">Tax Representation</a></li>
-            <li><a (click)="navigateTo('/itin-preparation')" class="dropdown-item">ITIN Preparation</a></li>
-            <li><a (click)="navigateTo('/advanced-tax-planning')" class="dropdown-item">Advanced Tax Planning</a></li>
-            <li><a (click)="navigateTo('/fbar-fatca')" class="dropdown-item">FBAR & FATCA Compliance</a></li>
-            <li><a (click)="navigateTo('/amendment-filing')" class="dropdown-item">Amendment Filing</a></li>
-          </ul>
+        <li>
+          <a routerLink="/home" (click)="gotoAndClose('/home')" class="nav-link">HOME</a>
+        </li>
+        <li>
+          <a routerLink="/about-us" (click)="gotoAndClose('/about-us')" class="nav-link">ABOUT US</a>
         </li>
 
-        <li><a routerLink="/pricing" (click)="navigateTo('/pricing')" class="nav-link">PRICING</a></li>
-        <li><a routerLink="/refund" (click)="navigateTo('/refund')" class="nav-link">REFUND</a></li>
-        <li><a routerLink="/contact-us" (click)="navigateTo('/contact-us')" class="nav-link">CONTACT US</a></li>
-        <li><a routerLink="/refund-estimate" (click)="navigateTo('/refund-estimate')" class="nav-link">REFUND ESTIMATION</a></li>
+        <!-- ============= SERVICES DROPDOWN (CLEAN + SIMPLE) ============= -->
+        <li class="dropdown" tabindex="0" [class.open]="servicesOpen">
+          <a class="drop-toggle nav-link"
+             (click)="servicesOpen = !servicesOpen"
+             role="button"
+             aria-haspopup="true"
+             aria-expanded="servicesOpen">
+            SERVICES<i class="bi bi-caret-down-fill"></i>
+          </a>
+
+          <ul class="dropdown-menu shadow" [class.show]="servicesOpen">
+            <li class="header">Tax &amp; Compliance</li>
+
+            <!-- these routes match your AppRoutingModule -->
+            <li>
+              <a class="dropdown-item"
+                 (click)="gotoAndClose('/federal-state-filing')">
+                Federal &amp; State Filing
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item"
+                 (click)="gotoAndClose('/tax-representation')">
+                Tax Representation
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item"
+                 (click)="gotoAndClose('/itin-preparation')">
+                ITIN Preparation
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item"
+                 (click)="gotoAndClose('/advanced-tax-planning')">
+                Advanced Tax Planning
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item"
+                 (click)="gotoAndClose('/fbar-fatca')">
+                FBAR &amp; FATCA Compliance
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item"
+                 (click)="gotoAndClose('/amendment-filing')">
+                Amendment Filing
+              </a>
+            </li>
+
+            <!-- Extra items from your screenshot – add routes later when you create components -->
+            <li class="divider"></li>
+            <li class="header">Business Services</li>
+            <li>
+              <a class="dropdown-item disabled-link"
+                (click)="gotoAndClose('/payroll-services')">
+                Payroll Services
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item disabled-link"
+                (click)="gotoAndClose('/sales-tax')">
+                Sales Tax
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item disabled-link"
+                (click)="gotoAndClose('/annual-reporting')">
+                Annual Reporting
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item disabled-link"
+                (click)="gotoAndClose('/llc-registration')">
+                LLC Registration
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!-- ============================================================= -->
+
+        <li>
+          <a routerLink="/pricing" (click)="gotoAndClose('/pricing')" class="nav-link">PRICING</a>
+        </li>
+        <li>
+          <a routerLink="/refund" (click)="gotoAndClose('/refund')" class="nav-link">REFUND</a>
+        </li>
+        <li>
+          <a routerLink="/contact-us" (click)="gotoAndClose('/contact-us')" class="nav-link">CONTACT US</a>
+        </li>
+        <li>
+          <a routerLink="/refund-estimate" (click)="gotoAndClose('/refund-estimate')" class="nav-link">
+            REFUND ESTIMATION
+          </a>
+        </li>
       </ul>
 
       <div class="links-right">
-        <a class="link-login btn-cta btn btn-primary px-4 py-2 rounded-pill shadow" routerLink="/login" (click)="navigateTo('/login')" style="margin-left: 100px !important;">
+        <a
+          class="link-login btn-cta btn btn-primary px-4 py-2 rounded-pill shadow"
+          routerLink="/login"
+          (click)="gotoAndClose('/login')"
+          style="margin-left: 100px !important;">
           <i class="bi bi-lock-fill"></i> Sign in
         </a>
-        <a class="btn-cta btn btn-primary px-4 py-2 rounded-pill shadow" routerLink="/register" (click)="navigateTo('/register')">
-          Sign Up
+
+        <a
+          class="btn-cta btn btn-primary px-4 py-2 rounded-pill shadow"
+          routerLink="/register"
+          (click)="gotoAndClose('/register')">
+          Register
         </a>
       </div>
     </div>

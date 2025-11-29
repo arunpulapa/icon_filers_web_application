@@ -15,6 +15,10 @@ import { FBARFATCAComplianceComponent } from './components/services-tax/fbar-fat
 import { ITINPreparationComponent } from './components/services-tax/itin-preparation/itin-preparation.component';
 import { FederalStateFilingComponent } from './components/services-tax/federal-state-filing/federal-state-filing.component';
 import { TaxRepresentationComponent } from './components/services-tax/tax-representation/tax-representation.component';
+import { PayrollServicesComponent } from './components/services-tax/payroll-services/payroll-services.component';
+import { SalesTaxComponent } from './components/services-tax/sales-tax/sales-tax.component';
+import { AnnualReportingComponent } from './components/services-tax/annual-reporting/annual-reporting.component';
+import { LLCRegistrationComponent } from './components/services-tax/llc-registration/llc-registration.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -33,6 +37,10 @@ const routes: Routes = [
   { path: 'itin-preparation', component: ITINPreparationComponent },
   { path: 'federal-state-filing', component: FederalStateFilingComponent },
   { path: 'tax-representation', component: TaxRepresentationComponent },
+  { path: 'payroll-services', component: PayrollServicesComponent },
+  { path: 'sales-tax', component: SalesTaxComponent },
+  { path: 'annual-reporting', component: AnnualReportingComponent },
+  { path: 'llc-registration', component: LLCRegistrationComponent },
 
 ];
 
