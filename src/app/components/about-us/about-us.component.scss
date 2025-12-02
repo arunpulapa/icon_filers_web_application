@@ -6,7 +6,6 @@
   position: absolute;
   inset: 0;
   border-radius: 36px;
-  background: radial-gradient(circle at top left, #eaf4fe 0, #f9fbff 40%, #f5f7fb 100%);
   opacity: 0.9;
   z-index: 0;
 }
@@ -23,7 +22,7 @@
 
 .team-img {
   border-radius: 24px;
-  max-height: 340px;
+  max-height: 470px;
   object-fit: cover;
   transition: transform 0.6s ease;
 }

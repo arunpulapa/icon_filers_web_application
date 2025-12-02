@@ -10,53 +10,130 @@
             <h2 class="fw-bold mb-1 text-gradient-signup">Create Account</h2>
             <div class="small text-muted">Welcome to effortless, secure tax services.</div>
           </div>
-          <form autocomplete="on">
+
+          <!-- FORM -->
+          <form
+            autocomplete="on"
+            #signupForm="ngForm"
+            (ngSubmit)="onSubmit(signupForm)"
+            novalidate
+          >
             <div class="row g-3">
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="text" class="form-control signup-glow" id="signupFirstName" placeholder="First Name" required>
+                  <input
+                    type="text"
+                    class="form-control signup-glow"
+                    id="signupFirstName"
+                    name="firstName"
+                    [(ngModel)]="model.firstName"
+                    placeholder="First Name"
+                    required
+                  />
                   <label for="signupFirstName"><i class="bi bi-person me-1"></i> First Name</label>
                 </div>
               </div>
+
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="text" class="form-control signup-glow" id="signupLastName" placeholder="Last Name" required>
+                  <input
+                    type="text"
+                    class="form-control signup-glow"
+                    id="signupLastName"
+                    name="lastName"
+                    [(ngModel)]="model.lastName"
+                    placeholder="Last Name"
+                    required
+                  />
                   <label for="signupLastName"><i class="bi bi-person-fill me-1"></i> Last Name</label>
                 </div>
               </div>
+
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="email" class="form-control signup-glow" id="signupEmail" placeholder="Email" required>
+                  <input
+                    type="email"
+                    class="form-control signup-glow"
+                    id="signupEmail"
+                    name="email"
+                    [(ngModel)]="model.email"
+                    placeholder="Email"
+                    required
+                  />
                   <label for="signupEmail"><i class="bi bi-envelope me-1"></i> Email</label>
                 </div>
               </div>
+
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="password" class="form-control signup-glow" id="signupPassword" placeholder="Password" required>
+                  <input
+                    type="password"
+                    class="form-control signup-glow"
+                    id="signupPassword"
+                    name="password"
+                    [(ngModel)]="model.password"
+                    placeholder="Password"
+                    required
+                  />
                   <label for="signupPassword"><i class="bi bi-key-fill me-1"></i> Password</label>
                 </div>
               </div>
+
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="text" class="form-control signup-glow" id="signupPhone" placeholder="Phone Number" required>
+                  <input
+                    type="text"
+                    class="form-control signup-glow"
+                    id="signupPhone"
+                    name="phoneNumber"
+                    [(ngModel)]="model.phoneNumber"
+                    placeholder="Phone Number"
+                    required
+                  />
                   <label for="signupPhone"><i class="bi bi-telephone me-1"></i> Phone Number</label>
                 </div>
               </div>
+
               <div class="col-md-6">
                 <div class="form-floating">
-                  <input type="text" class="form-control signup-glow" id="signupAltPhone" placeholder="Alternate Phone" >
+                  <input
+                    type="text"
+                    class="form-control signup-glow"
+                    id="signupAltPhone"
+                    name="alternatePhoneNumber"
+                    [(ngModel)]="model.alternatePhoneNumber"
+                    placeholder="Alternate Phone"
+                  />
                   <label for="signupAltPhone"><i class="bi bi-telephone-forward me-1"></i> Alternate Phone</label>
                 </div>
               </div>
             </div>
+
             <div class="mb-3 mt-4 small text-muted">
-              <input class="form-check-input me-1" type="checkbox" required>
-              I agree to the <a href="#" class="signup-link fw-semibold">Terms &amp; Privacy Policy</a>
+              <input
+                class="form-check-input me-1"
+                type="checkbox"
+                id="acceptTerms"
+                name="acceptTerms"
+                [(ngModel)]="model.acceptTerms"
+                required
+              />
+              <label for="acceptTerms">
+                I agree to the
+                <a href="#" class="signup-link fw-semibold">Terms &amp; Privacy Policy</a>
+              </label>
             </div>
-            <button type="submit" class="btn btn-gradient-signup px-4 py-2 w-100 rounded-pill mb-2">
-              <i class="bi bi-person-plus me-2"></i> Sign Up
+
+            <button
+              type="submit"
+              class="btn btn-gradient-signup px-4 py-2 w-100 rounded-pill mb-2"
+              [disabled]="signupForm.invalid || isSubmitting"
+            >
+              <i class="bi bi-person-plus me-2"></i>
+              {{ isSubmitting ? 'Creating Account...' : 'Sign Up' }}
             </button>
           </form>
+
           <div class="text-center mt-4">
             <span class="text-muted small">Already registered?</span>
             <a href="/login" class="fw-bold signup-link ms-2">Sign In</a>

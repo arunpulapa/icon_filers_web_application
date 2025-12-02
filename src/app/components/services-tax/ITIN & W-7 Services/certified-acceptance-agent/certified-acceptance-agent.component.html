@@ -1,0 +1,188 @@
+<section id="caa-services" class="service-page-main py-5">
+  <div class="container">
+    <!-- HEADER -->
+    <div
+      class="d-flex flex-column flex-lg-row align-items-center rounded-4 mb-5 p-4 gap-5"
+    >
+      <div class="flex-fill">
+        <h1 class="fw-bold mb-1 text-gradient-service">
+          <i class="bi bi-shield-check me-2"></i>
+          Certified Acceptance Agent (CAA) Services
+        </h1>
+        <div class="service-short-desc lead text-dark mb-3">
+          Official IRS-authorized CAA support for ITIN applications, document
+          verification, certification, and direct coordination with IRS ITIN
+          Operations.
+        </div>
+
+        <!-- badges -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+            <i class="bi bi-person-badge-fill me-1"></i>
+            IRS Authorized CAA
+          </span>
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">
+            <i class="bi bi-passport me-1"></i>
+            Passport Verification
+          </span>
+          <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">
+            <i class="bi bi-file-earmark-check me-1"></i>
+            Certified Accuracy Certificate
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDE TABS + CONTENT -->
+    <div class="individual-tabs-wrapper mb-5">
+      <div class="row g-4 align-items-stretch">
+        <!-- LEFT: TAB LIST -->
+        <div class="col-lg-4">
+          <div class="indiv-tab-list rounded-4 shadow-sm">
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="caaTab === 'authorized'"
+              (click)="setCaaTab('authorized')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">IRS Authorized CAA</span>
+                <small class="tab-sub">Certified Agent</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="caaTab === 'passport'"
+              (click)="setCaaTab('passport')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">Passport Verification</span>
+                <small class="tab-sub">In-person & remote</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="caaTab === 'certification'"
+              (click)="setCaaTab('certification')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">Documentation Certification</span>
+                <small class="tab-sub">Identity & Status</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="caaTab === 'accuracy'"
+              (click)="setCaaTab('accuracy')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">Certificate of Accuracy</span>
+                <small class="tab-sub">Issued to IRS</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="caaTab === 'coordination'"
+              (click)="setCaaTab('coordination')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">IRS Coordination</span>
+                <small class="tab-sub">ITIN Operations</small>
+              </span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: TAB CONTENT -->
+        <div class="col-lg-8">
+          <div class="indiv-tab-panel rounded-4 shadow-sm">
+
+            <!-- IRS AUTHORIZED -->
+            <ng-container *ngIf="caaTab === 'authorized'">
+              <h4 class="panel-title">CAA Authorized by IRS</h4>
+              <p class="panel-intro">We are officially recognized by the IRS to verify documents and assist with ITIN applications.</p>
+              <ul class="panel-list">
+                <li>IRS-certified for ITIN processing.</li>
+                <li>Trained to review identity & foreign status documents.</li>
+                <li>Ensures faster, error-free processing.</li>
+              </ul>
+            </ng-container>
+
+            <!-- PASSPORT -->
+            <ng-container *ngIf="caaTab === 'passport'">
+              <h4 class="panel-title">Passport Verification</h4>
+              <p class="panel-intro">We verify passports for ITIN applicants, eliminating the need to mail originals to IRS.</p>
+              <ul class="panel-list">
+                <li>In-person passport verification available.</li>
+                <li>Acceptable alternative documentation review.</li>
+                <li>Secure digital verification for remote applicants.</li>
+              </ul>
+            </ng-container>
+
+            <!-- DOCUMENT CERTIFICATION -->
+            <ng-container *ngIf="caaTab === 'certification'">
+              <h4 class="panel-title">Documentation Certification</h4>
+              <p class="panel-intro">We certify IDs, foreign status, and supporting documents required by IRS.</p>
+              <ul class="panel-list">
+                <li>Identity documentation certification.</li>
+                <li>Foreign status verification.</li>
+                <li>Support for dependents and spouse ITIN applications.</li>
+              </ul>
+            </ng-container>
+
+            <!-- CERTIFICATE OF ACCURACY -->
+            <ng-container *ngIf="caaTab === 'accuracy'">
+              <h4 class="panel-title">Issuing Certificate of Accuracy</h4>
+              <p class="panel-intro">We prepare the official Certificate of Accuracy (COA) required by IRS for ITIN applications.</p>
+              <ul class="panel-list">
+                <li>Prepare & sign official COA.</li>
+                <li>Attach COA to W-7 submission.</li>
+                <li>Helps avoid rejections or document requests.</li>
+              </ul>
+            </ng-container>
+
+            <!-- IRS COORDINATION -->
+            <ng-container *ngIf="caaTab === 'coordination'">
+              <h4 class="panel-title">Coordination with IRS ITIN Operations</h4>
+              <p class="panel-intro">
+                We directly coordinate with IRS ITIN Operations on behalf of applicants.
+              </p>
+              <ul class="panel-list">
+                <li>Follow-up on W-7 application progress.</li>
+                <li>Communicate with IRS for additional proofs.</li>
+                <li>Resolve processing delays & document issues.</li>
+              </ul>
+            </ng-container>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center bg-light p-4 rounded-4">
+      <div class="h5 mb-2 text-gradient-service">
+        Need help with ITIN through a Certified Acceptance Agent?
+      </div>
+      <a routerLink="/contact-us" class="btn btn-service-gradient px-5 py-2 rounded-pill">
+        Contact CAA Specialist <i class="bi bi-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </div>
+</section>

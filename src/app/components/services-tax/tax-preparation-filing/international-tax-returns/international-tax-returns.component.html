@@ -1,0 +1,248 @@
+<section id="international-tax-returns" class="service-page-main py-5">
+  <div class="container">
+    <!-- Header block -->
+    <div
+      class="d-flex flex-column flex-lg-row align-items-center rounded-4 mb-5 p-4 gap-5"
+    >
+      <div class="flex-fill">
+        <h1 class="fw-bold mb-1 text-gradient-service">
+          <i class="bi bi-globe2 me-2"></i>
+          International Tax Returns
+        </h1>
+        <div class="service-short-desc lead text-dark mb-3">
+          Specialized U.S. tax filing for foreign entities, cross-border
+          structures, and individuals claiming foreign tax credits – designed
+          to keep you compliant in multiple countries.
+        </div>
+
+        <!-- badges -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+            <i class="bi bi-credit-card-2-front me-1"></i>
+            Foreign Tax Credits (Form 1116)
+          </span>
+          <span class="badge bg-info-subtle text-info px-3 py-2 rounded-pill">
+            <i class="bi bi-building me-1"></i>
+            Foreign Owned U.S. Entities
+          </span>
+          <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">
+            <i class="bi bi-diagram-3-fill me-1"></i>
+            Foreign Corps / Partnerships
+          </span>
+        </div>
+      </div>
+
+  
+    </div>
+
+    <!-- SIDE TABS (same design as individual/business) -->
+    <div class="individual-tabs-wrapper mb-5">
+      <div class="row g-4 align-items-stretch">
+        <!-- Left: tab list -->
+        <div class="col-lg-4">
+          <div class="indiv-tab-list rounded-4 shadow-sm">
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeIntlTab === 'ftc'"
+              (click)="setIntlTab('ftc')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Foreign Tax Credits</span>
+                <small class="tab-sub">Form 1116</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeIntlTab === 'foue'"
+              (click)="setIntlTab('foue')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Foreign Owned U.S. Entities</span>
+                <small class="tab-sub">1120, 5472</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeIntlTab === 'fcorp'"
+              (click)="setIntlTab('fcorp')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Foreign Corporations</span>
+                <small class="tab-sub">1120-F, 5471</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeIntlTab === 'fpart'"
+              (click)="setIntlTab('fpart')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Foreign Partnerships</span>
+                <small class="tab-sub">Form 8865</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeIntlTab === 'branch'"
+              (click)="setIntlTab('branch')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Foreign Branches</span>
+                <small class="tab-sub">Form 8858</small>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: tab content -->
+        <div class="col-lg-8">
+          <div class="indiv-tab-panel rounded-4 shadow-sm">
+            <!-- Foreign Tax Credits -->
+            <ng-container *ngIf="activeIntlTab === 'ftc'">
+              <h4 class="panel-title">Foreign Tax Credits (Form 1116)</h4>
+              <p class="panel-intro">
+                For U.S. taxpayers paying tax abroad, we help you avoid double
+                taxation by accurately claiming foreign tax credits.
+              </p>
+              <ul class="panel-list">
+                <li>Classify foreign income by category (general, passive, etc.).</li>
+                <li>Compute limitation and carryover rules for Form 1116.</li>
+                <li>Coordinate with foreign tax returns to maximize benefit.</li>
+                <li>Handle multiple countries and currency conversions.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Foreign Owned US Entities -->
+            <ng-container *ngIf="activeIntlTab === 'foue'">
+              <h4 class="panel-title">Foreign Owned U.S. Entities (1120 / 5472)</h4>
+              <p class="panel-intro">
+                Required reporting for U.S. corporations owned by foreign
+                shareholders, including related-party transactions.
+              </p>
+              <ul class="panel-list">
+                <li>Form 1120 preparation for the U.S. corporation.</li>
+                <li>Form 5472 reporting of foreign ownership &amp; transactions.</li>
+                <li>Documentation of loans, management fees &amp; cost sharing.</li>
+                <li>Record-keeping guidance to support transfer pricing.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Foreign Corporations -->
+            <ng-container *ngIf="activeIntlTab === 'fcorp'">
+              <h4 class="panel-title">Foreign Corporations (1120-F / 5471)</h4>
+              <p class="panel-intro">
+                For foreign companies with U.S. activities or U.S. shareholders,
+                we prepare complex information returns and disclosures.
+              </p>
+              <ul class="panel-list">
+                <li>Form 1120-F for foreign corporations with U.S. ECI.</li>
+                <li>Form 5471 for U.S. shareholders of CFCs or foreign corps.</li>
+                <li>Ownership, sub-part F and GILTI calculations (as applicable).</li>
+                <li>Co-ordination with foreign advisors on source &amp; treaty issues.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Foreign Partnerships -->
+            <ng-container *ngIf="activeIntlTab === 'fpart'">
+              <h4 class="panel-title">Foreign Partnerships (Form 8865)</h4>
+              <p class="panel-intro">
+                Reporting for U.S. persons who own or control foreign
+                partnerships or joint ventures.
+              </p>
+              <ul class="panel-list">
+                <li>Form 8865 preparation with required schedules.</li>
+                <li>Track ownership percentages and profit-sharing.</li>
+                <li>Report capital accounts, contributions and distributions.</li>
+                <li>Coordinate with Form 1116 / 1118 where credits apply.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Foreign Branches -->
+            <ng-container *ngIf="activeIntlTab === 'branch'">
+              <h4 class="panel-title">Foreign Branches (Form 8858)</h4>
+              <p class="panel-intro">
+                For U.S. businesses operating through foreign branches or
+                disregarded entities, we prepare the required branch reporting.
+              </p>
+              <ul class="panel-list">
+                <li>Form 8858 for each foreign branch or DE.</li>
+                <li>Segregation of branch income, assets and taxes paid.</li>
+                <li>Integration with FTC calculations and Form 1118/1116.</li>
+                <li>Guidance on restructuring branches vs. subsidiaries.</li>
+              </ul>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Extra 2-column content (optional, like other screens) -->
+    <div class="row gy-5">
+      <div class="col-lg-6">
+        <div class="service-highlight-card rounded-4 bg-white shadow-sm p-4 mb-4">
+          <h4 class="fw-semibold text-gradient-service mb-3">
+            <i class="bi bi-ui-checks-grid me-1"></i>
+            What’s Included in International Tax Support
+          </h4>
+          <ul class="service-list mb-3">
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Review of foreign structures, ownership charts and residency.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Preparation of all relevant U.S. forms (1116, 5471, 5472, 8865, 8858, 1120-F).
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Coordination with your foreign tax advisors where needed.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Support with IRS notices related to international reporting.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="service-cta-card text-center mt-4 bg-light p-4 shadow rounded-4">
+          <div class="h5 mb-2 text-gradient-service">
+            Need help with cross-border or international tax?
+          </div>
+          <a
+            routerLink="/contact-us"
+            class="btn btn-service-gradient px-5 py-2 rounded-pill"
+          >
+            Speak with an International Tax Expert
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

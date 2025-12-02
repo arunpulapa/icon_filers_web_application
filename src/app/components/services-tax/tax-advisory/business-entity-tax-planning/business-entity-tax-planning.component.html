@@ -1,0 +1,256 @@
+<section id="business-tax-planning" class="service-page-main py-5">
+  <div class="container">
+    <!-- Header block -->
+    <div
+      class="d-flex flex-column flex-lg-row align-items-center rounded-4 mb-5 p-4 gap-5"
+    >
+      <div class="flex-fill">
+        <h1 class="fw-bold mb-1 text-gradient-service">
+          <i class="bi bi-briefcase-gear me-2"></i>
+          Business &amp; Entity Tax Planning
+        </h1>
+        <div class="service-short-desc lead text-dark mb-3">
+          Strategic, year-round planning for LLCs, corporations and
+          self-employed owners – so your business structure, payroll and
+          retirement decisions all work together for tax efficiency.
+        </div>
+
+        <!-- badges -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+            <i class="bi bi-bullseye me-1"></i>
+            Business Goals First
+          </span>
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">
+            <i class="bi bi-graph-up-arrow me-1"></i>
+            Projections &amp; Scenarios
+          </span>
+          <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">
+            <i class="bi bi-diagram-3 me-1"></i>
+            Entity Structure Review
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDE TABS -->
+    <div class="individual-tabs-wrapper mb-5">
+      <div class="row g-4 align-items-stretch">
+        <!-- Left: tab list -->
+        <div class="col-lg-4">
+          <div class="indiv-tab-list rounded-4 shadow-sm">
+
+            <!-- Business Financial Goals Identification -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeBizPlanTab === 'goals'"
+              (click)="setBizPlanTab('goals')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Business Financial Goals</span>
+                <small class="tab-sub">Goals Identification</small>
+              </span>
+            </button>
+
+            <!-- Tax Return Review & Projections -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeBizPlanTab === 'review'"
+              (click)="setBizPlanTab('review')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Tax Return Review &amp; Projections</span>
+                <small class="tab-sub">Past &amp; Future Years</small>
+              </span>
+            </button>
+
+            <!-- Retirement Account Planning -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeBizPlanTab === 'retirement'"
+              (click)="setBizPlanTab('retirement')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Retirement Account Planning</span>
+                <small class="tab-sub">401(k), SEP, SIMPLE IRA</small>
+              </span>
+            </button>
+
+            <!-- Payroll Planning for Owners & Family -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeBizPlanTab === 'payroll'"
+              (click)="setBizPlanTab('payroll')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Payroll Planning for Owners &amp; Family</span>
+                <small class="tab-sub">Reasonable Comp</small>
+              </span>
+            </button>
+
+            <!-- Entity Restructuring -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeBizPlanTab === 'entity'"
+              (click)="setBizPlanTab('entity')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Entity Restructuring</span>
+                <small class="tab-sub">LLC vs C-Corp vs S-Corp</small>
+              </span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Right: tab content -->
+        <div class="col-lg-8">
+          <div class="indiv-tab-panel rounded-4 shadow-sm">
+            <!-- Goals -->
+            <ng-container *ngIf="activeBizPlanTab === 'goals'">
+              <h4 class="panel-title">Business Financial Goals Identification</h4>
+              <p class="panel-intro">
+                We start with your business vision: growth, profitability,
+                exit plans and cash-flow needs — then design a tax strategy
+                that supports those goals.
+              </p>
+              <ul class="panel-list">
+                <li>Clarify short-term and long-term business targets.</li>
+                <li>Map owner cash-flow needs vs. reinvestment plans.</li>
+                <li>Identify tax-sensitive events: acquisitions, exits, equity grants.</li>
+                <li>Build a simple roadmap that connects goals to tax actions.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Review & Projections -->
+            <ng-container *ngIf="activeBizPlanTab === 'review'">
+              <h4 class="panel-title">Tax Return Review &amp; Projections</h4>
+              <p class="panel-intro">
+                We review prior returns for issues and build forward-looking
+                projections, so you know your estimated bill before year-end.
+              </p>
+              <ul class="panel-list">
+                <li>Check last 1–3 years of business and owner returns.</li>
+                <li>Spot red flags, inconsistent reporting or missed deductions.</li>
+                <li>Create year-end projections based on YTD numbers.</li>
+                <li>Suggest specific moves before 31st Dec to reduce taxes.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Retirement Planning -->
+            <ng-container *ngIf="activeBizPlanTab === 'retirement'">
+              <h4 class="panel-title">Retirement Account Planning</h4>
+              <p class="panel-intro">
+                Choose and size the right retirement plan for your entity
+                type and income level – balancing owner benefits with cash-flow.
+              </p>
+              <ul class="panel-list">
+                <li>Compare 401(k), Solo 401(k), SEP and SIMPLE IRA options.</li>
+                <li>Calculate maximum deductible contributions for owners.</li>
+                <li>Model impact on current-year tax and future savings.</li>
+                <li>Coordinate plan design with payroll and entity structure.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Payroll Planning -->
+            <ng-container *ngIf="activeBizPlanTab === 'payroll'">
+              <h4 class="panel-title">Payroll Planning for Owners &amp; Family</h4>
+              <p class="panel-intro">
+                Optimize how owners and family members are paid – salary,
+                distributions, or contractor payments – while staying compliant.
+              </p>
+              <ul class="panel-list">
+                <li>Reasonable salary planning for S-Corp owners.</li>
+                <li>Children and spouse on payroll vs. contractor arrangements.</li>
+                <li>Coordinate W-2 wages with retirement and benefit plans.</li>
+                <li>Estimate payroll tax impact of different scenarios.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Entity Restructuring -->
+            <ng-container *ngIf="activeBizPlanTab === 'entity'">
+              <h4 class="panel-title">Entity Restructuring (LLC vs C-Corp vs S-Corp)</h4>
+              <p class="panel-intro">
+                As your business evolves, the original legal structure may no
+                longer be the best fit. We help evaluate and implement changes
+                in a tax-efficient way.
+              </p>
+              <ul class="panel-list">
+                <li>Compare tax impact of LLC, C-Corp and S-Corp structures.</li>
+                <li>Model owner take-home pay under each option.</li>
+                <li>Plan timing of elections (e.g. S-Election) and restructures.</li>
+                <li>Coordinate filings and compliance when you change structure.</li>
+              </ul>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom row (optional, simple CTA) -->
+    <div class="row gy-5">
+      <div class="col-lg-6">
+        <div class="service-highlight-card rounded-4 bg-white shadow-sm p-4 mb-4">
+          <h4 class="fw-semibold text-gradient-service mb-3">
+            <i class="bi bi-lightning-charge me-1"></i>
+            When Business Tax Planning Makes Sense
+          </h4>
+          <ul class="service-list mb-3">
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Your revenue or profit has grown quickly in the last 1–2 years.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              You’re paying yourself in multiple ways (salary, draws, dividends).
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              You are considering hiring family or adding partners/investors.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              You’re not sure if your current entity type is still the best fit.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="service-cta-card text-center mt-4 bg-light p-4 shadow rounded-4">
+          <div class="h5 mb-2 text-gradient-service">
+            Want a tax strategy built around your business?
+          </div>
+          <a
+            routerLink="/contact-us"
+            class="btn btn-service-gradient px-5 py-2 rounded-pill"
+          >
+            Schedule a Business Planning Call
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

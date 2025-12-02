@@ -1,0 +1,252 @@
+<section id="personal-tax-planning" class="service-page-main py-5">
+  <div class="container">
+    <!-- Header block -->
+    <div
+      class="d-flex flex-column flex-lg-row align-items-center rounded-4 mb-5 p-4 gap-5"
+    >
+      <div class="flex-fill">
+        <h1 class="fw-bold mb-1 text-gradient-service">
+          <i class="bi bi-person-gear me-2"></i>
+          Personal Tax Planning
+        </h1>
+        <div class="service-short-desc lead text-dark mb-3">
+          Proactive, year-round planning to align your personal financial goals
+          with a smart tax strategy — not just filing a return once a year.
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+            <i class="bi bi-bullseye me-1"></i>
+            Goal-based Tax Strategy
+          </span>
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">
+            <i class="bi bi-search-heart me-1"></i>
+            Missed Deductions Review
+          </span>
+          <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">
+            <i class="bi bi-bar-chart-line me-1"></i>
+            Stock &amp; Equity Planning
+          </span>
+        </div>
+      </div>
+
+    
+    </div>
+
+    <!-- SIDE TABS (same design as Individual / Business / International) -->
+    <div class="individual-tabs-wrapper mb-5">
+      <div class="row g-4 align-items-stretch">
+        <!-- Left: tab list -->
+        <div class="col-lg-4">
+          <div class="indiv-tab-list rounded-4 shadow-sm">
+            <!-- Personal Financial Goals Identification -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activePlanningTab === 'goals'"
+              (click)="setPlanningTab('goals')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Personal Financial Goals</span>
+                <small class="tab-sub">Goals Identification</small>
+              </span>
+            </button>
+
+            <!-- Tax Return Review -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activePlanningTab === 'review'"
+              (click)="setPlanningTab('review')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Tax Return Review</span>
+                <small class="tab-sub">Past 1–3 Years</small>
+              </span>
+            </button>
+
+            <!-- Missed deductions & credits -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activePlanningTab === 'missed'"
+              (click)="setPlanningTab('missed')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Missed Deductions &amp; Credits</span>
+                <small class="tab-sub">Savings Opportunities</small>
+              </span>
+            </button>
+
+            <!-- Cost benefit for amendments -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activePlanningTab === 'amend'"
+              (click)="setPlanningTab('amend')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Cost–Benefit for Amendments</span>
+                <small class="tab-sub">1040-X Analysis</small>
+              </span>
+            </button>
+
+            <!-- Employer stock option advice -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activePlanningTab === 'stock'"
+              (click)="setPlanningTab('stock')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Employer Stock Option Advice</span>
+                <small class="tab-sub">RSUs / ESOP / ESPP</small>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: tab content -->
+        <div class="col-lg-8">
+          <div class="indiv-tab-panel rounded-4 shadow-sm">
+            <!-- Goals Identification -->
+            <ng-container *ngIf="activePlanningTab === 'goals'">
+              <h4 class="panel-title">Personal Financial Goals Identification</h4>
+              <p class="panel-intro">
+                We start by understanding where you are and where you want to go:
+                family, career, relocation, retirement, education, or business
+                dreams — then align your tax strategy to support those goals.
+              </p>
+              <ul class="panel-list">
+                <li>Discuss short, medium and long-term financial goals.</li>
+                <li>Map major life events (marriage, kids, property, relocation).</li>
+                <li>Review income sources: salary, business, rental, investments.</li>
+                <li>Build a high-level tax roadmap for the next 3–5 years.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Tax Return Review -->
+            <ng-container *ngIf="activePlanningTab === 'review'">
+              <h4 class="panel-title">Tax Return Review</h4>
+              <p class="panel-intro">
+                We carefully review your recent tax returns to ensure they are
+                accurate, consistent, and aligned with your goals.
+              </p>
+              <ul class="panel-list">
+                <li>Check past 1–3 years of returns for obvious errors or gaps.</li>
+                <li>Compare actual numbers vs. paystubs, 1099s and statements.</li>
+                <li>Confirm filing status, dependents, and residency treatment.</li>
+                <li>Identify areas where documentation should be improved.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Missed deductions & credits -->
+            <ng-container *ngIf="activePlanningTab === 'missed'">
+              <h4 class="panel-title">Identify Missed Deductions &amp; Credits</h4>
+              <p class="panel-intro">
+                We look for money left on the table — deductions and credits you
+                may have been eligible for but didn’t claim.
+              </p>
+              <ul class="panel-list">
+                <li>Review housing, education, childcare and medical expenses.</li>
+                <li>Check retirement contributions, HSA/FSA and charity records.</li>
+                <li>Evaluate state-specific credits and benefits you may qualify for.</li>
+                <li>Summarize potential tax savings by year and category.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Cost–benefit for amendments -->
+            <ng-container *ngIf="activePlanningTab === 'amend'">
+              <h4 class="panel-title">Cost Benefit Analysis for Amendments</h4>
+              <p class="panel-intro">
+                Not every mistake requires an amended return. We calculate
+                whether amending is worth it — in time, fees and potential risk.
+              </p>
+              <ul class="panel-list">
+                <li>Estimate additional refund or reduced tax if amended.</li>
+                <li>Compare benefit vs. professional fees and effort.</li>
+                <li>Consider statute-of-limitation deadlines for each year.</li>
+                <li>Provide a clear recommendation: “Amend” or “Monitor only”.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Employer Stock Option Advice -->
+            <ng-container *ngIf="activePlanningTab === 'stock'">
+              <h4 class="panel-title">Employer Stock Option Advice</h4>
+              <p class="panel-intro">
+                Understand the tax impact of RSUs, ESOPs, ESPP and stock options,
+                and plan exercises and sales in a tax-efficient way.
+              </p>
+              <ul class="panel-list">
+                <li>Explain how your specific equity plan is taxed over time.</li>
+                <li>Compare different exercise / sale scenarios before you act.</li>
+                <li>Coordinate with capital gains, AMT exposure and residency.</li>
+                <li>Build a simple action plan for upcoming vesting events.</li>
+              </ul>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom 2-column (optional extra like other pages) -->
+    <div class="row gy-5">
+      <div class="col-lg-6">
+        <div class="service-highlight-card rounded-4 bg-white shadow-sm p-4 mb-4">
+          <h4 class="fw-semibold text-gradient-service mb-3">
+            <i class="bi bi-lightbulb me-1"></i>
+            When Personal Tax Planning Helps Most
+          </h4>
+          <ul class="service-list mb-3">
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              You expect big changes – new job, relocation, property or sale of assets.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              You receive RSUs/ESOP/ESPP or other equity compensation.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Your tax bill or refund jumped unexpectedly vs. last year.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              You want a clear, written plan instead of one-time filing only.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="service-cta-card text-center mt-4 bg-light p-4 shadow rounded-4">
+          <div class="h5 mb-2 text-gradient-service">
+            Ready to align your taxes with your life goals?
+          </div>
+          <a
+            routerLink="/contact-us"
+            class="btn btn-service-gradient px-5 py-2 rounded-pill"
+          >
+            Book a Personal Tax Planning Session
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

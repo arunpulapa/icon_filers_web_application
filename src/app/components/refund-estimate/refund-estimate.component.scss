@@ -1,17 +1,53 @@
+/* REFUND ESTIMATION SECTION */
 .refund-estimation-section {
-  background: linear-gradient(120deg,#f0fbff 72%,#eef6fc 100%);
-  border-radius: 22px;
+  background: linear-gradient(120deg, #f0fbff 72%, #eef6fc 100%);
 }
+
+/* Small kicker label */
+.refund-kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* Override alignment for this title on large screens */
+.refund-title {
+  text-align: left;
+}
+
+@media (max-width: 991px) {
+  .refund-title {
+    text-align: center;
+  }
+}
+
+/* Gradient text for small headings and icons */
 .text-gradient-refund {
-  background: linear-gradient(90deg,#44c3e5 30%,#21b07e 90%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  background: linear-gradient(90deg, #44c3e5 30%, #21b07e 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.refund-hints { 
-  color: #27508b; font-size: 1.07em; padding-left: 0; list-style: none; 
+
+/* Bullet hints */
+.refund-hints {
+  color: #27508b;
+  font-size: 1.02em;
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0.5rem;
 }
+
 .refund-hints li::before {
-  content: "⦿ "; color: #21b07e; font-size: 1em; margin-right: 2px;
+  content: "⦿ ";
+  color: #21b07e;
+  font-size: 1em;
+  margin-right: 2px;
 }
+
+/* Illustration */
 .refund-illustration {
   max-width: 400px;
   width: 100%;
@@ -31,56 +67,50 @@
 }
 
 @media (max-width: 991px) {
-  .refund-illustration { border-radius: 14px; max-width: 100%; }
+  .refund-illustration {
+    border-radius: 14px;
+    max-width: 100%;
+    margin-top: 0.5rem;
+  }
 }
 
-.refund-form-card, .refund-result-card { border-radius: 22px; box-shadow: 0 3px 22px #088af114; }
-.form-refund-input {
-  border-radius: 12px;
-  border: 1.6px solid #b6e0ff;
-  background: #f8fafc;
-  font-size: 1.07em;
-  box-shadow: none;
-  transition: border-color 0.16s, box-shadow 0.15s;
+/* CTA button */
+.refund-cta-btn {
+  border-radius: 999px;
+  padding-inline: 1.8rem;
 }
-.form-refund-input:focus {
-  border-color:#21b07e; box-shadow: 0 0 0 2px #21b07e33;
-}
-.btn-gradient-refund {
-  background: linear-gradient(120deg, #44c3e5 60%, #21b07e 100%);
-  color: #fff; font-weight: 700; border: none;
-  box-shadow: 0 0 13px #21b07e44; transition: box-shadow .15s, transform .13s;
-}
-.btn-gradient-refund:hover { box-shadow:0 2px 24px #21b07e85; color:#fff; transform: translateY(-1.5px) scale(1.03); }
-.refund-result-card h4 { font-size: 1.55rem; letter-spacing: .03em; }
-@media (max-width:991px){
-  .refund-estimation-section { border-radius:14px; }
-  .refund-illustration{ max-width:140px;}
-  .refund-result-card, .refund-form-card { border-radius:14px;}
-}
-@media (max-width:767px){
-  .refund-form-card, .refund-result-card { padding: 18px 7px;}
-  .refund-result-card h4 { font-size:1.15rem;}
-}
-.result-card span {
-  font-size: 1.25em;
-  color: #21916a;
-  font-weight: 700;
-}
-.result-card .row {
-  font-size: 1.07em;
-  color: #294387;
-}
+
+/* FAQ / How-it-works card */
 .faq-card {
   border-radius: 18px;
   background: #fff;
   box-shadow: 0 2px 22px #21b07e16;
-  margin-top: 32px;
 }
-.faq-card h6 { font-size: 1.18em; }
-@media (max-width:991px){
-  .faq-card, .result-card, .estimator-card { border-radius: 13px;}
+
+/* Steps */
+.refund-step {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 10px 12px;
+  height: 100%;
+  border: 1px solid #e5edf7;
 }
+
+.refund-step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #44c3e5, #21b07e);
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+/* Glow contact link */
 .glow-cta-link {
   font-weight: 700;
   color: #21b07e;
@@ -88,21 +118,21 @@
   border-radius: 6px;
   text-decoration: none;
   position: relative;
-  /* Strong text-shadow for instant visibility */
   text-shadow: 0 2px 8px #44c3e5, 0 0 18px #21b07e66;
   transition: background 0.17s, text-shadow 0.18s, color 0.18s;
   background: linear-gradient(90deg, #21b07e 0%, #44c3e5 30%, #fff 50%, #44c3e5 70%, #21b07e 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: #21b07e; /* Make sure readable! */
+  -webkit-text-fill-color: #21b07e;
   background-clip: text;
   animation: glowTextSlide 2.3s linear infinite;
 }
 
-.glow-cta-link:hover, .glow-cta-link:focus {
+.glow-cta-link:hover,
+.glow-cta-link:focus {
   color: #12b388;
   text-shadow: 0 2px 12px #21b07e, 0 0 24px #44c3e5b7;
-  background: linear-gradient(90deg,#44c3e5 10%,#fff 50%,#21b07e 90%);
+  background: linear-gradient(90deg, #44c3e5 10%, #fff 50%, #21b07e 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: #12b388;
   background-clip: text;

@@ -1,0 +1,245 @@
+<section id="ein-state-registrations" class="service-page-main py-5">
+  <div class="container">
+    <!-- HEADER -->
+    <div
+      class="d-flex flex-column flex-lg-row align-items-center rounded-4 mb-5 p-4 gap-5"
+    >
+      <div class="flex-fill">
+        <h1 class="fw-bold mb-1 text-gradient-service">
+          <i class="bi bi-hash me-2"></i>
+          EIN &amp; State Registrations / BOI &amp; BE Reporting
+        </h1>
+        <div class="service-short-desc lead text-dark mb-3">
+          We handle EIN registrations, state registrations and new
+          Corporate Transparency Act (CTA) Beneficial Ownership Information
+          (BOI) and BE-12/13 reporting, so your company stays compliant on all
+          fronts.
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+            <i class="bi bi-hash me-1"></i>
+            EIN &amp; state registrations
+          </span>
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">
+            <i class="bi bi-shield-check me-1"></i>
+            CTA / BOI compliance
+          </span>
+          <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">
+            <i class="bi bi-bar-chart-line-fill me-1"></i>
+            BEA BE-12 / BE-13
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDE TABS + CONTENT -->
+    <div class="individual-tabs-wrapper mb-5">
+      <div class="row g-4 align-items-stretch">
+        <!-- LEFT: TAB LIST -->
+        <div class="col-lg-4">
+          <div class="indiv-tab-list rounded-4 shadow-sm">
+
+            <!-- CTA compliance -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="einStateTab === 'cta'"
+              (click)="setEinStateTab('cta')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  CTA Compliance
+                </span>
+                <small class="tab-sub">
+                  Corporate Transparency Act
+                </small>
+              </span>
+            </button>
+
+            <!-- BOI report -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="einStateTab === 'boi'"
+              (click)="setEinStateTab('boi')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  Beneficial Ownership Report
+                </span>
+                <small class="tab-sub">
+                  Customized BOI filing
+                </small>
+              </span>
+            </button>
+
+            <!-- FinCEN submission -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="einStateTab === 'fincen'"
+              (click)="setEinStateTab('fincen')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  FinCEN Submission &amp; Confirmation
+                </span>
+                <small class="tab-sub">
+                  Official acknowledgement
+                </small>
+              </span>
+            </button>
+
+            <!-- Ongoing updates -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="einStateTab === 'updates'"
+              (click)="setEinStateTab('updates')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  Ongoing BOI Update Filings
+                </span>
+                <small class="tab-sub">
+                  Ownership changes
+                </small>
+              </span>
+            </button>
+
+            <!-- BEA reporting -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="einStateTab === 'bea'"
+              (click)="setEinStateTab('bea')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  BE-12 / BE-13 Reporting
+                </span>
+                <small class="tab-sub">
+                  U.S. BEA compliance
+                </small>
+              </span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: TAB CONTENT -->
+        <div class="col-lg-8">
+          <div class="indiv-tab-panel rounded-4 shadow-sm">
+
+            <!-- CTA COMPLIANCE -->
+            <ng-container *ngIf="einStateTab === 'cta'">
+              <h4 class="panel-title">
+                Compliance under Corporate Transparency Act (CTA)
+              </h4>
+              <p class="panel-intro">
+                We review your entity structure and owners to determine
+                exactly what has to be reported under the new CTA rules.
+              </p>
+              <ul class="panel-list">
+                <li>Identify reporting companies that fall under CTA rules.</li>
+                <li>Review beneficial owners, control persons and exemptions.</li>
+                <li>Explain due dates and penalties for non-compliance.</li>
+                <li>Prepare a clear action plan for your business group.</li>
+              </ul>
+            </ng-container>
+
+            <!-- BOI REPORT -->
+            <ng-container *ngIf="einStateTab === 'boi'">
+              <h4 class="panel-title">
+                Customized Beneficial Ownership Information (BOI) Report
+              </h4>
+              <p class="panel-intro">
+                We collect owner data, build a clean BOI report and prepare it
+                in the exact format required by FinCEN.
+              </p>
+              <ul class="panel-list">
+                <li>Gather identity, ownership and control details securely.</li>
+                <li>Map complex structures (multi-member, foreign owners, etc.).</li>
+                <li>Prepare FinCEN-ready BOI report and internal summary.</li>
+                <li>Store owner info for future updates and audits.</li>
+              </ul>
+            </ng-container>
+
+            <!-- FINCEN SUBMISSION -->
+            <ng-container *ngIf="einStateTab === 'fincen'">
+              <h4 class="panel-title">
+                Submission &amp; Confirmation from FinCEN
+              </h4>
+              <p class="panel-intro">
+                We file your BOI report through the FinCEN system and track
+                the official confirmation.
+              </p>
+              <ul class="panel-list">
+                <li>Electronic submission of BOI report to FinCEN.</li>
+                <li>Obtain and store submission receipts / IDs.</li>
+                <li>Share confirmation PDF for your internal records.</li>
+                <li>Assist with corrections if FinCEN flags any issues.</li>
+              </ul>
+            </ng-container>
+
+            <!-- ONGOING UPDATES -->
+            <ng-container *ngIf="einStateTab === 'updates'">
+              <h4 class="panel-title">
+                Ongoing BOI Report Update Filings
+              </h4>
+              <p class="panel-intro">
+                Ownership and control often change; we manage required BOI
+                updates so you remain compliant year-round.
+              </p>
+              <ul class="panel-list">
+                <li>Monitor trigger events: ownership, address, or officer changes.</li>
+                <li>Prepare and submit updated BOI filings on time.</li>
+                <li>Maintain a change log for regulators and auditors.</li>
+                <li>Coordinate updates with tax, legal and state filings.</li>
+              </ul>
+            </ng-container>
+
+            <!-- BEA REPORTING -->
+            <ng-container *ngIf="einStateTab === 'bea'">
+              <h4 class="panel-title">
+                U.S. Bureau of Economic Analysis (BEA) Reporting – BE-12 / BE-13
+              </h4>
+              <p class="panel-intro">
+                For certain foreign-owned or outbound investments, BEA
+                reporting is mandatory. We help you stay compliant.
+              </p>
+              <ul class="panel-list">
+                <li>Determine whether your entity triggers BE-12 / BE-13 reporting.</li>
+                <li>Collect ownership and financial data required by BEA.</li>
+                <li>Prepare and file the appropriate BEA forms.</li>
+                <li>Provide copies and guidance for future reporting cycles.</li>
+              </ul>
+            </ng-container>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div class="text-center bg-light p-4  rounded-4">
+      <div class="h5 mb-2 text-gradient-service">
+        Need help with EIN, state registrations and BOI / BE reporting?
+      </div>
+      <a
+        routerLink="/contact-us"
+        class="btn btn-service-gradient px-5 py-2 rounded-pill"
+      >
+        Talk to our Compliance Team
+        <i class="bi bi-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,254 @@
+<section id="w7-itin-application" class="service-page-main py-5">
+  <div class="container">
+    <!-- Header block -->
+    <div
+      class="d-flex flex-column flex-lg-row align-items-center rounded-4 mb-5 p-4 gap-5"
+    >
+      <div class="flex-fill">
+        <h1 class="fw-bold mb-1 text-gradient-service">
+          <i class="bi bi-passport-fill me-2"></i>
+          W-7 &amp; ITIN Application Services
+        </h1>
+        <div class="service-short-desc lead text-dark mb-3">
+          End-to-end support for new ITINs, renewals and ITIN-linked tax
+          filings – for nonresident individuals, spouses, dependents and
+          foreign business owners.
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+            <i class="bi bi-file-earmark-text me-1"></i>
+            W-7 ITIN Application Filing
+          </span>
+          <span class="badge bg-info-subtle text-info px-3 py-2 rounded-pill">
+            <i class="bi bi-people-fill me-1"></i>
+            Spouse &amp; Dependents
+          </span>
+          <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">
+            <i class="bi bi-building me-1"></i>
+            Business Owners &amp; Renewals
+          </span>
+        </div>
+      </div>
+
+      <!-- <div class="service-illustration flex-shrink-0 text-center">
+        <img
+          src="https://i.pinimg.com/736x/12/5c/4d/125c4ddcb6d6b8334e9e26bfa727ebf9.jpg"
+          alt="ITIN and W7 application assistance"
+          class="rounded-4 shadow service-header-img"
+          loading="lazy"
+        />
+      </div> -->
+    </div>
+
+    <!-- SIDE TABS -->
+    <div class="individual-tabs-wrapper mb-5">
+      <div class="row g-4 align-items-stretch">
+        <!-- Left: tab list -->
+        <div class="col-lg-4">
+          <div class="indiv-tab-list rounded-4 shadow-sm">
+            <!-- W7 ITIN Application Filing -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeItinTab === 'filing'"
+              (click)="setItinTab('filing')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">W-7 ITIN Application Filing</span>
+                <small class="tab-sub">First-time ITIN</small>
+              </span>
+            </button>
+
+            <!-- Nonresident spouse & dependents -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeItinTab === 'spouse'"
+              (click)="setItinTab('spouse')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">ITIN for Spouse &amp; Dependents</span>
+                <small class="tab-sub">Nonresident family</small>
+              </span>
+            </button>
+
+            <!-- Nonresident US business owners -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeItinTab === 'business'"
+              (click)="setItinTab('business')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">ITIN for Nonresident US Owners</span>
+                <small class="tab-sub">LLC / C-Corp</small>
+              </span>
+            </button>
+
+            <!-- ITIN Renewal -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeItinTab === 'renewal'"
+              (click)="setItinTab('renewal')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">ITIN Renewal Application</span>
+                <small class="tab-sub">Expired / expiring ITIN</small>
+              </span>
+            </button>
+
+            <!-- 1040 / 1040NR Filing with ITIN -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeItinTab === 'taxfiling'"
+              (click)="setItinTab('taxfiling')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">1040 &amp; 1040NR Tax Filing</span>
+                <small class="tab-sub">With ITIN support</small>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: tab content -->
+        <div class="col-lg-8">
+          <div class="indiv-tab-panel rounded-4 shadow-sm">
+            <!-- Filing -->
+            <ng-container *ngIf="activeItinTab === 'filing'">
+              <h4 class="panel-title">W-7 ITIN Application Filing</h4>
+              <p class="panel-intro">
+                We prepare and file your W-7 ITIN package end-to-end, making
+                sure all documents and supporting proofs match IRS requirements.
+              </p>
+              <ul class="panel-list">
+                <li>Determine whether you qualify for an ITIN and under which category.</li>
+                <li>Prepare Form W-7 with accurate, IRS-ready information.</li>
+                <li>Guide you on identity and foreign status documents to submit.</li>
+                <li>Help you choose the correct method: mail, in-person TAC, or CAA.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Spouse / Dependent -->
+            <ng-container *ngIf="activeItinTab === 'spouse'">
+              <h4 class="panel-title">ITIN for Nonresident Spouse &amp; Dependents</h4>
+              <p class="panel-intro">
+                Add nonresident spouses and dependents correctly so you can
+                file joint returns and claim eligible credits where allowed.
+              </p>
+              <ul class="panel-list">
+                <li>Review residency, relationship and support tests for dependents.</li>
+                <li>Prepare separate W-7 applications for each family member.</li>
+                <li>Coordinate W-7s with your 1040 / 1040NR filing strategy.</li>
+                <li>Explain how ITINs impact credits and future filings.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Business owners -->
+            <ng-container *ngIf="activeItinTab === 'business'">
+              <h4 class="panel-title">ITIN for Nonresident US Business Owners</h4>
+              <p class="panel-intro">
+                Nonresident owners of US LLCs or corporations often need ITINs
+                to meet banking, reporting and tax obligations.
+              </p>
+              <ul class="panel-list">
+                <li>Determine ITIN need for ownership, banking or filing reasons.</li>
+                <li>Align W-7 applications with EIN, entity filings and K-1s.</li>
+                <li>Prepare supporting letters and ownership proofs when required.</li>
+                <li>Coordinate timing with initial or first-year tax filings.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Renewal -->
+            <ng-container *ngIf="activeItinTab === 'renewal'">
+              <h4 class="panel-title">ITIN Renewal Application</h4>
+              <p class="panel-intro">
+                Renew your ITIN before it delays refunds or rejects your tax
+                return – especially if you haven’t filed for a few years.
+              </p>
+              <ul class="panel-list">
+                <li>Check whether your ITIN has expired or is set to expire.</li>
+                <li>Prepare renewal W-7 and required documentation.</li>
+                <li>Advise on timing so current-year returns are not delayed.</li>
+                <li>Update IRS records when your name, address or status changed.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Tax filing with ITIN -->
+            <ng-container *ngIf="activeItinTab === 'taxfiling'">
+              <h4 class="panel-title">1040 &amp; 1040NR Tax Filing with ITIN</h4>
+              <p class="panel-intro">
+                Combine ITIN work with your actual tax filing so both are
+                consistent and processed smoothly by the IRS.
+              </p>
+              <ul class="panel-list">
+                <li>Prepare 1040 or 1040NR returns that match your W-7 filings.</li>
+                <li>Attach returns to initial ITIN applications when required.</li>
+                <li>Handle joint filings, dependents and foreign income correctly.</li>
+                <li>Provide copies and guidance for future-year filings after ITIN approval.</li>
+              </ul>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="row gy-4">
+      <div class="col-lg-8">
+        <div class="service-highlight-card rounded-4 bg-white shadow-sm p-4 mb-4">
+          <h4 class="fw-semibold text-gradient-service mb-3">
+            Not sure which ITIN option you need?
+          </h4>
+          <ul class="service-list mb-3">
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              First-time filers, spouses, dependents and business owners welcome.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              We help you avoid common rejection reasons and delays.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Option to combine ITIN and tax return preparation in one package.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4 d-flex align-items-center">
+        <div class="service-cta-card text-center bg-light p-4 shadow rounded-4 w-100">
+          <div class="h5 mb-2 text-gradient-service">
+            Ready to start your W-7 / ITIN process?
+          </div>
+          <a
+            routerLink="/contact-us"
+            class="btn btn-service-gradient px-4 py-2 rounded-pill"
+          >
+            Talk to our ITIN team
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

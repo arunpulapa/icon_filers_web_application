@@ -29,6 +29,8 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.attachGetStartedListeners();
+    this.initScrollAnimations();
     // Wire all "Get started" buttons / links that match visible text "Get started"
     const els = Array.from(document.querySelectorAll('button, a')) as HTMLElement[];
     els.forEach(el => {
@@ -43,26 +45,17 @@ export class HomeComponent implements AfterViewInit {
     });
   }
 
-  /**
-   * Navigate to the contact page (your separate ContactUsComponent)
-   */
+ 
   goToContact() {
     // Use router so user stays in SPA
     this.router.navigate(['/contact-us']);
   }
 
-  /**
-   * Simple required validator wrapper to avoid template-index access issues.
-   * Returning { required: true } or null
-   */
   requiredValidator(control: AbstractControl): ValidationErrors | null {
     const v = (control.value || '').toString().trim();
     return v ? null : { required: true };
   }
 
-  /**
-   * Accepts email or phone (7-15 digits). Returns null if valid, otherwise { invalidIdentifier: true }
-   */
   emailOrPhoneValidator(control: AbstractControl): ValidationErrors | null {
     const v = (control.value || '').toString().trim();
     if (!v) return { required: true };
@@ -93,6 +86,46 @@ export class HomeComponent implements AfterViewInit {
       this.showToast('Successfully subscribed — check mail.', 'success');
       this.signinForm.reset();
     }, 5000);
+  }
+
+
+  /** All "Get started" buttons go to Contact page */
+  private attachGetStartedListeners() {
+    const els = Array.from(document.querySelectorAll('button, a')) as HTMLElement[];
+    els.forEach(el => {
+      const text = (el.innerText || el.textContent || '').trim().toLowerCase();
+      if (text === 'get started' || text === 'getstarted') {
+        this.renderer.listen(el, 'click', (ev) => {
+          ev.preventDefault();
+          this.goToContact();
+        });
+      }
+    });
+  }
+  private initScrollAnimations() {
+    const elements = Array.from(
+      document.querySelectorAll<HTMLElement>('.reveal-on-scroll')
+    );
+
+    if (!('IntersectionObserver' in window) || elements.length === 0) {
+      elements.forEach(el => el.classList.add('reveal-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            el.classList.add('reveal-visible');
+            obs.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    elements.forEach(el => observer.observe(el));
   }
 
   showToast(message: string, type: 'success' | 'error') {

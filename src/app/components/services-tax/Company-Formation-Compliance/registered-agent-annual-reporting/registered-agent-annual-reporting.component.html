@@ -1,0 +1,232 @@
+<section id="registered-agent-annual" class="service-page-main py-5">
+  <div class="container">
+    <!-- HEADER -->
+    <div
+      class="d-flex flex-column flex-lg-row align-items-center rounded-4 mb-5 p-4 gap-5"
+    >
+      <div class="flex-fill">
+        <h1 class="fw-bold mb-1 text-gradient-service">
+          <i class="bi bi-geo-alt-fill me-2"></i>
+          Registered Agent &amp; Annual Reporting
+        </h1>
+        <div class="service-short-desc lead text-dark mb-3">
+          Keep your company in good standing with reliable registered agent
+          services, real U.S. business addresses and on-time annual reports in
+          key states.
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+            <i class="bi bi-shield-lock-fill me-1"></i>
+            Compliance &amp; legal notices
+          </span>
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">
+            <i class="bi bi-building me-1"></i>
+            Real physical addresses
+          </span>
+          <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">
+            <i class="bi bi-speedometer2 me-1"></i>
+            Dashboard &amp; reminders
+          </span>
+        </div>
+      </div>
+
+      <!-- <div class="service-illustration flex-shrink-0 text-center">
+        <img
+          src="https://i.pinimg.com/736x/2e/91/9c/2e919cf0bc3e8a2a4aa5f1ae55f50f44.jpg"
+          alt="Registered agent and virtual business address"
+          class="rounded-4 shadow service-header-img"
+          loading="lazy"
+        />
+      </div> -->
+    </div>
+
+    <!-- SIDE TABS + CONTENT -->
+    <div class="individual-tabs-wrapper mb-5">
+      <div class="row g-4 align-items-stretch">
+        <!-- LEFT: TAB LIST -->
+        <div class="col-lg-4">
+          <div class="indiv-tab-list rounded-4 shadow-sm">
+
+            <!-- Agent in almost all states -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="regAgentTab === 'agent'"
+              (click)="setRegAgentTab('agent')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  Registered Agent (Multi-State)
+                </span>
+                <small class="tab-sub">Almost all U.S. states</small>
+              </span>
+            </button>
+
+            <!-- Discounted WY/DE -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="regAgentTab === 'discount'"
+              (click)="setRegAgentTab('discount')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  Discounted Wyoming &amp; Delaware
+                </span>
+                <small class="tab-sub">Popular incorporation hubs</small>
+              </span>
+            </button>
+
+            <!-- Dedicated business address -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="regAgentTab === 'address'"
+              (click)="setRegAgentTab('address')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  Dedicated Business Address
+                </span>
+                <small class="tab-sub">Suite numbers included</small>
+              </span>
+            </button>
+
+            <!-- No PO box – real physical -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="regAgentTab === 'physical'"
+              (click)="setRegAgentTab('physical')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  Real Physical Addresses
+                </span>
+                <small class="tab-sub">No PO boxes</small>
+              </span>
+            </button>
+
+            <!-- Online dashboard -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="regAgentTab === 'dashboard'"
+              (click)="setRegAgentTab('dashboard')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  Online Account &amp; Dashboard
+                </span>
+                <small class="tab-sub">Docs &amp; annual reports</small>
+              </span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: TAB CONTENT -->
+        <div class="col-lg-8">
+          <div class="indiv-tab-panel rounded-4 shadow-sm">
+
+            <!-- Registered Agent services -->
+            <ng-container *ngIf="regAgentTab === 'agent'">
+              <h4 class="panel-title">Registered Agent Services in Almost All States</h4>
+              <p class="panel-intro">
+                We receive official mail and legal notices on behalf of your
+                company and make sure you never miss a compliance deadline.
+              </p>
+              <ul class="panel-list">
+                <li>Registered agent coverage in most major U.S. states.</li>
+                <li>Prompt email alerts when documents are received.</li>
+                <li>Scanned copies uploaded to your secure dashboard.</li>
+                <li>Support for LLCs, corporations and multi-entity groups.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Discounted WY/DE -->
+            <ng-container *ngIf="regAgentTab === 'discount'">
+              <h4 class="panel-title">Discounted Wyoming &amp; Delaware Services</h4>
+              <p class="panel-intro">
+                Special pricing for entities formed or maintained in Wyoming
+                and Delaware — two of the most popular business states.
+              </p>
+              <ul class="panel-list">
+                <li>Lower annual registered agent fees in WY &amp; DE.</li>
+                <li>Support for holding companies and startups.</li>
+                <li>Guidance on annual report filing requirements.</li>
+                <li>Coordination with your tax and banking setup.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Dedicated address -->
+            <ng-container *ngIf="regAgentTab === 'address'">
+              <h4 class="panel-title">Dedicated Business Address with Suite Numbers</h4>
+              <p class="panel-intro">
+                Get a professional U.S. business address you can use for
+                registrations, banking and client correspondence.
+              </p>
+              <ul class="panel-list">
+                <li>Unique suite or unit number for your company.</li>
+                <li>Suitable for state registrations and IRS correspondence.</li>
+                <li>Mail reception with optional forwarding add-ons.</li>
+                <li>Helps separate business and personal addresses.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Physical, not PO box -->
+            <ng-container *ngIf="regAgentTab === 'physical'">
+              <h4 class="panel-title">No PO Box – Real Physical Addresses</h4>
+              <p class="panel-intro">
+                Many states and banks do not accept PO boxes. We provide real
+                street addresses that meet regulatory requirements.
+              </p>
+              <ul class="panel-list">
+                <li>Street-level addresses accepted by state agencies.</li>
+                <li>Works for EIN, bank accounts and merchant accounts.</li>
+                <li>Better credibility with clients and partners.</li>
+                <li>Compatible with most KYC / verification checks.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Online dashboard -->
+            <ng-container *ngIf="regAgentTab === 'dashboard'">
+              <h4 class="panel-title">Dedicated Online Account &amp; Dashboard</h4>
+              <p class="panel-intro">
+                Monitor your entities, annual report due dates and key documents
+                from one modern, secure portal.
+              </p>
+              <ul class="panel-list">
+                <li>Store and download formation docs and notices anytime.</li>
+                <li>View annual report deadlines and compliance status.</li>
+                <li>Track multiple entities from a single login.</li>
+                <li>Optional reminders by email / SMS for renewals.</li>
+              </ul>
+            </ng-container>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center bg-light p-4 rounded-4">
+      <div class="h5 mb-2 text-gradient-service">
+        Want us to handle your registered agent &amp; annual reports?
+      </div>
+      <a
+        routerLink="/contact-us"
+        class="btn btn-service-gradient px-5 py-2 rounded-pill"
+      >
+        Talk to our Compliance Team
+        <i class="bi bi-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </div>
+</section>

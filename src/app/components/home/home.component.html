@@ -1,206 +1,453 @@
-<!-- HERO SECTION -->
-<div class="container home-hero py-5">
-  <div class="row g-5 align-items-center">
-    <!-- LEFT SIDE -->
-    <div class="col-lg-7">
-      <h1 class="headline">
-        Let’s take your mind off taxes
-        <span class="decor-line"></span>
-      </h1>
-      <p class="subtitle">
-        Our experts are ready to help you get your biggest refund,
-        <a href="#" class="fw-bold text-primary text-gradient">guaranteed</a>.
-      </p>
-      <button class="btn btn-primary btn-lg shadow-sm hero-btn mb-2">
-        <i class="bi bi-lightning-charge me-1 blink-icon"></i> Get started
+<!-- HERO SECTION WRAPPER -->
+<div style="background-color: whitesmoke;">
+
+  <!-- HERO CAROUSEL -->
+  <div class="hero-carousel-wrapper">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner shadow-lg overflow-hidden">
+
+        <!-- SLIDE 1 -->
+        <div class="carousel-item active" data-bs-interval="6000">
+          <img src="https://i.pinimg.com/736x/42/b7/e3/42b7e3e204ad93f3e39e7bd37b0bfb1f.jpg"
+               class="hero-slide-img" alt="Federal Tax Filing" />
+
+          <div class="carousel-caption h-100 d-flex justify-content-center align-items-center">
+            <div class="hero-caption-inner text-center reveal-on-scroll from-right">
+              <span class="hero-pill mb-2">
+                Trusted US Tax Experts
+              </span>
+
+              <h1 class="headline mb-3">
+                Federal taxes, simplified
+                <span class="decor-line"></span>
+              </h1>
+
+              <p class="subtitle mb-3">
+                One expert team to prepare, file and track your US taxes from start to finish.
+              </p>
+
+              <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+                <button class="btn btn-primary btn-lg shadow-sm hero-btn">
+                  <i class="bi bi-lightning-charge me-1 blink-icon"></i> Get started
+                </button>
+              </div>
+
+              <p class="small mb-0 subtle-note">
+                Free review before filing. No obligation until you approve.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="carousel-item" data-bs-interval="6000">
+          <img src="https://i.pinimg.com/1200x/9b/df/75/9bdf7507eee73f8b2c61cd7deff14e16.jpg"
+               class="hero-slide-img" alt="Free Taxation Offer" />
+
+          <div class="carousel-caption h-100 d-flex justify-content-center align-items-center">
+            <div class="hero-caption-inner text-center reveal-on-scroll from-right">
+              <span class="hero-pill mb-2">
+                Free Estimation First
+              </span>
+
+              <h1 class="headline mb-3">
+                Free tax estimation in 24 hours
+                <span class="decor-line"></span>
+              </h1>
+
+              <p class="subtitle mb-3">
+                Share your documents securely and get a clear refund estimate before you decide to file.
+              </p>
+
+              <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+                <button class="btn btn-primary btn-lg shadow-sm hero-btn">
+                  Get started
+                </button>
+              </div>
+
+              <p class="small mb-0 subtle-note">
+                We convert leads to clients only when you’re happy with the result.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="carousel-item" data-bs-interval="6000">
+          <img src="https://i.pinimg.com/1200x/0b/61/47/0b61475c2d648858ea6a0968f56462aa.jpg"
+               class="hero-slide-img" alt="Tax Refund Experts" />
+
+          <div class="carousel-caption h-100 d-flex justify-content-center align-items-center">
+            <div class="hero-caption-inner text-center reveal-on-scroll from-right">
+              <span class="hero-pill mb-2">
+                Pay-From-Refund Model
+              </span>
+
+              <h1 class="headline mb-3">
+                We’re paid only from your refund
+                <span class="decor-line"></span>
+              </h1>
+
+              <p class="subtitle mb-3">
+                We charge a small percentage from your approved refund – estimation itself is always free.
+              </p>
+
+              <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+                <button class="btn btn-primary btn-lg shadow-sm hero-btn">
+                  Get started
+                </button>
+              </div>
+
+              <p class="small mb-0 subtle-note">
+                If you don’t file with us, you don’t pay us.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
       </button>
-      <div class="hero-image mt-3 animate-img d-none d-lg-block">
-        <img src="https://i.pinimg.com/736x/11/0b/77/110b77a0ea79b679d429d6ed6e788d22.jpg"
-          style="min-width: 670px; height: 420px;" alt="Refund Experts" class="w-120 rounded-4 border border-3 border-light" />
-      </div>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
     </div>
-    <!-- RIGHT SIDE -->
-    <div class="col-lg-5">
-      <div class="card shadow rounded-4 border-0 login-card mb-4 p-3">
-        <div class="card-body py-4 px-3">
-          <h5 class="fw-bold mb-2 text-gradient">Sign in to Icon Filers</h5>
-
-          <!-- START: Angular-bound Sign-in Form -->
-         <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
-  <input
-    type="text"
-    class="form-control mb-3 shadow-none"
-    placeholder="Phone number, email, or user ID"
-    formControlName="identifier"
-    [class.is-invalid]="identifier.invalid && (identifier.touched || identifier.dirty)"
-  />
-
-  <div *ngIf="identifier.invalid && (identifier.touched || identifier.dirty)" class="invalid-feedback small mb-2">
-    <span *ngIf="identifier.hasError('required')">This field is required.</span>
-    <span *ngIf="identifier.hasError('invalidIdentifier')">Enter a valid email or phone number.</span>
   </div>
 
-  <div class="form-check mb-2">
-    <input class="form-check-input" type="checkbox" id="rememberMe" />
-    <label class="form-check-label small text-secondary" for="rememberMe">Remember me</label>
-  </div>
+  <!-- THREE WAYS TO FILE SECTION -->
+  <div class="ways-section py-5">
+    <div class="container">
+      <h1 class="text-center fw-bold ways-title mb-3 mt-4 reveal-on-scroll">
+        Choose how you’d like to file
+      </h1>
+      <p class="ways-subtitle text-center mb-5 reveal-on-scroll delay-1">
+        Every option starts with a free tax estimation from our team.
+      </p>
 
-  <button class="btn btn-primary w-100 mb-2 py-2 rounded-3 shadow-sm btn-signin" type="submit" [disabled]="loading">
-    <ng-container *ngIf="!loading">
-      <i class="bi bi-lock me-2"></i>Sign in
-    </ng-container>
-    <ng-container *ngIf="loading">
-      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-    </ng-container>
-  </button>
-</form>
-
-          <!-- END: Angular-bound Sign-in Form -->
-
-          <div class="small text-center text-muted mb-2">
-            By signing in to your <a href="#">Intuit Account</a>, you agree to our <a href="#">Terms</a>
-            and <a href="#">Privacy Statement</a>.
-          </div>
-          <div class="text-center mt-2 small">
-            <span class="me-1">New to Intuit?</span>
-            <a href="#" class="fw-semibold">Create an account</a>
+      <div class="row g-4 justify-content-center">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="ways-card card border-0 shadow-sm h-100 reveal-on-scroll">
+            <div class="card-body d-flex flex-column align-items-center text-center">
+              <h5 class="fw-bold mb-2">We do your taxes for you</h5>
+              <p class="ways-text mb-3">
+                A dedicated tax expert prepares and files everything for you – perfect if you’re busy or have complexity.
+              </p>
+              <button class="btn btn-primary px-4 mb-2">Get started</button>
+              <a href="javascript:void(0)" class="ways-link fw-semibold mb-3">
+                See how full service works
+              </a>
+              <div class="card-img-box position-relative mt-auto mb-1 w-100 d-flex justify-content-center">
+                <img
+                  src="https://i.pinimg.com/1200x/22/ea/0e/22ea0e438a496b25dd3173adaaab9d4a.jpg"
+                  class="expert-img" alt="Expert Andrew"
+                />
+                <span class="ways-badge">
+                  Andrew, Tax Expert, 16 yrs
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="card p-4 shadow blue-card border-0 rounded-4">
-        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-          <div>
-            <h5 class="mb-2 text-dark">Simple tax returns 100% free</h5>
-            <p class="mb-2 small">
-              ~37% of filers qualify.
-              <a href="#" class="fw-semibold text-primary">Simple Form 1040 returns only</a>
-              <br>(no schedules except for Earned Income Tax Credit, Child Tax Credit and student loan interest).
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="ways-card card border-0 shadow-sm h-100 reveal-on-scroll delay-1">
+            <div class="card-body d-flex flex-column align-items-center text-center">
+              <h5 class="fw-bold mb-2">File with expert guidance</h5>
+              <p class="ways-text mb-3">
+                You drive, we sit next to you. Ask questions anytime and get a final review before submitting.
+              </p>
+              <button class="btn btn-primary px-4 mb-2">Get started</button>
+              <a href="javascript:void(0)" class="ways-link fw-semibold mb-3">
+                See how guided filing works
+              </a>
+              <div class="card-img-box position-relative mt-auto mb-1 w-100 d-flex justify-content-center">
+                <img
+                  src="https://i.pinimg.com/1200x/47/cf/80/47cf80157f64c8c0c770b52cbfdf907a.jpg"
+                  class="expert-img" alt="Expert Kitty"
+                />
+                <span class="ways-badge ways-badge-light">
+                  Kitty, Tax Expert, 15 yrs
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="ways-card card border-0 shadow-sm h-100 reveal-on-scroll delay-2">
+            <div class="card-body d-flex flex-column align-items-center text-center">
+              <h5 class="fw-bold mb-2">File your own taxes</h5>
+              <p class="ways-text mb-3">
+                Prefer DIY? Use our simple checklist and tools, with an expert on standby if you want a review.
+              </p>
+              <button class="btn btn-primary px-4 mb-2">Get started</button>
+              <a href="javascript:void(0)" class="ways-link fw-semibold mb-3">
+                See how Icon Tax works
+              </a>
+              <div class="card-img-box position-relative mt-auto mb-1 w-100 d-flex justify-content-center">
+                <img
+                  src="https://i.pinimg.com/736x/49/54/88/495488b2f79bd52c7e64acf9d2fedb27.jpg"
+                  class="expert-img" alt="Refund Girl"
+                />
+                <span class="ways-badge ways-badge-refund">
+                  <i class="bi bi-currency-dollar me-1"></i> Example refund $3,207
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS / OPERATOR ASSIST SECTION -->
+  <section class="operator-assist-section py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <!-- LEFT: IMAGE -->
+        <div class="col-lg-6">
+          <div class="assist-image-wrapper reveal-on-scroll from-left">
+            <img
+              src="https://i.pinimg.com/736x/29/ff/1f/29ff1f1539dfc3282884ab31c47430bf.jpg"
+              alt="Tax experts assisting clients"
+              class="assist-image"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- RIGHT: TEXT + STEPS -->
+        <div class="col-lg-6">
+          <div class="assist-content reveal-on-scroll from-right">
+            <p class="assist-kicker mb-2">How we work</p>
+            <h2 class="assist-heading mb-3">
+              From free estimation to paid client in three simple steps
+            </h2>
+            <p class="assist-intro mb-4">
+              We start every relationship with a free, no-obligation tax estimation. You become a paying
+              client only when you choose to file with us, and our fee comes as a small percentage of your refund.
             </p>
-            <a href="#" class="fw-bold">Start for free</a>
-          </div>
-          <div class="free-banner text-center px-2 d-none d-md-block">
-            <div class="free-text fw-bold text-primary">FREE</div>
-            <div class="fw-bold lh-1">$0 <span class="text-muted">$0</span> <span class="text-muted">$0</span></div>
-            <div class="small text-muted mt-1">Fed  State  to File</div>
+
+            <div class="row g-3">
+              <!-- Step 1 -->
+              <div class="col-sm-4">
+                <div class="assist-step-card h-100 reveal-on-scroll">
+                  <div class="assist-step-number">1</div>
+                  <h3 class="assist-title mb-1">Share your details</h3>
+                  <p class="assist-text mb-0">
+                    Upload documents securely or tell us your situation. We review and estimate your refund for free.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="col-sm-4">
+                <div class="assist-step-card h-100 reveal-on-scroll delay-1">
+                  <div class="assist-step-number">2</div>
+                  <h3 class="assist-title mb-1">Review with an expert</h3>
+                  <p class="assist-text mb-0">
+                    A tax expert walks you through the numbers and answers your questions before you commit.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="col-sm-4">
+                <div class="assist-step-card h-100 reveal-on-scroll delay-2">
+                  <div class="assist-step-number">3</div>
+                  <h3 class="assist-title mb-1">Pay & File  </h3>
+                  <p class="assist-text mb-0">
+                    If you approve, we file your return and our fee is taken from your refund—no upfront payment.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p class="assist-footnote mt-3 mb-0">
+              If you decide not to file with us after estimation, you pay nothing. It’s that simple.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- THREE WAYS TO FILE SECTION -->
-<div class="ways-section py-5">
+  <!-- STATS / ACHIEVEMENTS SECTION -->
+  <section class="stats-section py-5">
+    <div class="container">
+      <div class="text-center mb-4 reveal-on-scroll">
+        <p class="stats-tagline mb-1">Why clients trust ICON TAX</p>
+        <h2 class="stats-title">
+          Backed by experienced tax professionals and happy clients
+        </h2>
+      </div>
+
+      <div class="row text-center g-4 justify-content-center">
+
+        <!-- Stat 1: Experience -->
+        <div class="col-6 col-md-3">
+          <div class="stat-box shadow-sm reveal-on-scroll">
+            <div class="stat-icon">
+              <i class="bi bi-briefcase-fill"></i>
+            </div>
+            <h3 class="stat-value">20+ <span>Years</span></h3>
+            <p class="stat-label">Tax Experience</p>
+          </div>
+        </div>
+
+        <!-- Stat 2: Tax Experts -->
+        <div class="col-6 col-md-3">
+          <div class="stat-box shadow-sm reveal-on-scroll delay-1">
+            <div class="stat-icon">
+              <i class="bi bi-person-badge-fill"></i>
+            </div>
+            <h3 class="stat-value">50+ <span>Experts</span></h3>
+            <p class="stat-label">Experts by your side</p>
+          </div>
+        </div>
+
+        <!-- Stat 3: Clients Base -->
+        <div class="col-6 col-md-3">
+          <div class="stat-box shadow-sm reveal-on-scroll delay-2">
+            <div class="stat-icon">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <h3 class="stat-value">15K+</h3>
+            <p class="stat-label">Clients Base</p>
+          </div>
+        </div>
+
+        <!-- Stat 4: Satisfaction -->
+        <div class="col-6 col-md-3">
+          <div class="stat-box shadow-sm reveal-on-scroll delay-3">
+            <div class="stat-icon">
+              <i class="bi bi-emoji-smile-fill"></i>
+            </div>
+            <h3 class="stat-value">99%</h3>
+            <p class="stat-label">Client Satisfaction</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+<section class="services-section py-5">
   <div class="container">
-    <h2 class="text-center fw-semibold ways-title mb-5">
-      Three ways to file, all backed by our Tax Return Lifetime Guarantee<sup class="tm">™</sup>
-    </h2>
-    <div class="row g-4 justify-content-center">
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="ways-card card border-0 shadow-sm">
-          <div class="card-body d-flex flex-column align-items-center">
-            <h5 class="fw-bold mb-2 text-center">We do your taxes for you</h5>
-            <p class="text-center mb-3 text-muted" style="font-size:1.04em;">
-              Have a tax expert do your taxes from start to finish, as soon as today.
-            </p>
-            <button class="btn btn-primary px-4 mb-2">Get started</button>
-            <a href="#" class="ways-link fw-semibold mb-3 text-primary" style="font-size:1em;">
-              See how Live Full Service works
-            </a>
-            <div class="card-img-box position-relative mt-auto mb-1 w-100 d-flex justify-content-center">
-              <img src="https://i.pinimg.com/1200x/22/ea/0e/22ea0e438a496b25dd3173adaaab9d4a.jpg"
-                class="expert-img rounded-3" alt="Expert Andrew" />
-              <span class="ways-badge position-absolute fs-6 px-3 py-1 start-50 translate-middle-x"
-                style="bottom:12px;background:rgba(51,51,51,0.93);color:#fff;border-radius:1.5em;">
-                Andrew, Tax Expert, 16 yrs
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="ways-card card border-0 shadow-sm h-100">
-          <div class="card-body d-flex flex-column align-items-center">
-            <h5 class="fw-bold mb-2 text-center">Get expert help as you go</h5>
-            <p class="text-center mb-3 text-muted" style="font-size:1.04em;">
-              Get advice from tax experts as you file, as well as a final expert review.
-            </p>
-            <button class="btn btn-primary px-4 mb-2">Get started</button>
-            <a href="#" class="ways-link fw-semibold mb-3 text-primary" style="font-size:1em;">
-              See how Live Assisted works
-            </a>
-            <div class="card-img-box position-relative mt-auto mb-1 w-100 d-flex justify-content-center">
-              <img src="https://i.pinimg.com/1200x/47/cf/80/47cf80157f64c8c0c770b52cbfdf907a.jpg"
-                class="expert-img rounded-3" alt="Expert Kitty" />
-              <span class="ways-badge position-absolute fs-6 px-3 py-1 start-50 translate-middle-x"
-                style="bottom:12px;background:#cde6f7;color:#333;border-radius:1.5em;">
-                Kitty, Tax Expert, 15 yrs
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="ways-card card border-0 shadow-sm h-100">
-          <div class="card-body d-flex flex-column align-items-center">
-            <h5 class="fw-bold mb-2 text-center">File your own taxes</h5>
-            <p class="text-center mb-3 text-muted" style="font-size:1.04em;">
-              Just answer simple questions, and we’ll guide you through filing your taxes.
-            </p>
-            <button class="btn btn-primary px-4 mb-2">Get started</button>
-            <a href="#" class="ways-link fw-semibold mb-3 text-primary" style="font-size:1em;">
-              See how Icon Tax works
-            </a>
-            <div class="card-img-box position-relative mt-auto mb-1 w-100 d-flex justify-content-center">
-              <img src="https://i.pinimg.com/736x/49/54/88/495488b2f79bd52c7e64acf9d2fedb27.jpg"
-                class="expert-img rounded-3" alt="Refund Girl" />
-              <span class="ways-badge position-absolute fs-6 px-3 py-1 start-50 translate-middle-x"
-                style="bottom:12px;background:#eaf4fe;color:#183153;border-radius:1.5em;">
-                <i class="bi bi-currency-dollar me-1"></i> $3,207 Federal Refund
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="text-center mb-5 reveal-on-scroll">
+      <p class="services-kicker mb-1">ICONTAX offers multiple services</p>
+      <h2 class="services-title">
+        Support for every stage of your U.S. tax journey
+      </h2>
+      <p class="services-subtitle mt-2">
+        From individual filings to complex compliance, our experts are here for you throughout the year.
+      </p>
     </div>
-  </div>
-</div>
 
-<!-- OPERATOR ASSIST SECTION -->
-<section class="operator-assist-section py-5">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <!-- LEFT: IMAGE -->
-      <div class="col-lg-6">
-        <div class="assist-image-wrapper">
-          <img
-            src="https://i.pinimg.com/736x/6a/7a/15/6a7a150b675aeb0ed2b1995aa74ceb25.jpg"
-            alt="Tax experts assisting clients"
-            class="assist-image"
-            loading="lazy"
-          />
-        </div>
-      </div>
-
-      <!-- RIGHT: TEXT -->
-      <div class="col-lg-6">
-        <div class="assist-content">
-          <h3 class="assist-title mb-3">Standard Operator Assist</h3>
-          <p class="assist-text mb-4">
-            Under the supervision of our experienced tax experts, we ensure that all
-            clients receive clear guidance to maximize tax benefits. At the same time,
-            we maintain strict confidentiality and data protection for every client.
+    <div class="row g-4">
+      <!-- Federal & State Taxes -->
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card h-100 reveal-on-scroll">
+          <div class="service-icon">
+            <i class="bi bi-receipt-cutoff"></i>
+          </div>
+          <h5 class="service-title">Federal &amp; State Taxes</h5>
+          <p class="service-text">
+            From individual returns to business filings, we ensure accurate, timely tax preparation so you can
+            navigate U.S. federal and state regulations with confidence.
           </p>
+        </div>
+      </div>
 
-          <h3 class="assist-title mb-3">Premium Operator Assist</h3>
-          <p class="assist-text mb-0">
-            ICON TAX provides an unbiased, tailored approach to your situation. Get
-            one-on-one help for tax planning, multi-state filings, investments,
-            retirement, small business income, and more—so every decision is tax-smart.
+      <!-- Tax Representation -->
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card h-100 reveal-on-scroll delay-1">
+          <div class="service-icon">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h5 class="service-title">Tax Representation</h5>
+          <p class="service-text">
+            In need of expert guidance? We stand by you during IRS notices, audits, and disputes, helping protect
+            your rights and your peace of mind.
+          </p>
+        </div>
+      </div>
+
+      <!-- ITIN Preparation -->
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card h-100 reveal-on-scroll delay-2">
+          <div class="service-icon">
+            <i class="bi bi-passport"></i>
+          </div>
+          <h5 class="service-title">ITIN Preparation</h5>
+          <p class="service-text">
+            We help you obtain or renew your Individual Taxpayer Identification Number (ITIN) quickly and
+            correctly, keeping you compliant with U.S. tax laws.
+          </p>
+        </div>
+      </div>
+
+      <!-- Advanced Tax Planning -->
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card h-100 reveal-on-scroll">
+          <div class="service-icon">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <h5 class="service-title">Advanced Tax Planning</h5>
+          <p class="service-text">
+            Strategic tax planning to minimize liabilities, maximize refunds, and align every decision with
+            your long-term financial goals.
+          </p>
+        </div>
+      </div>
+
+      <!-- FBAR & FATCA Compliance -->
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card h-100 reveal-on-scroll delay-1">
+          <div class="service-icon">
+            <i class="bi bi-globe2"></i>
+          </div>
+          <h5 class="service-title">FBAR &amp; FATCA Compliance</h5>
+          <p class="service-text">
+            Foreign assets? We guide you through FBAR and FATCA rules, helping you stay compliant while avoiding
+            unnecessary penalties and surprises.
+          </p>
+        </div>
+      </div>
+
+      <!-- Amendment Filing -->
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card h-100 reveal-on-scroll delay-2">
+          <div class="service-icon">
+            <i class="bi bi-arrow-repeat"></i>
+          </div>
+          <h5 class="service-title">Amendment Filing</h5>
+          <p class="service-text">
+            Found an error in a previous return? We review, correct, and file amendments so your records stay
+            accurate and compliant with the latest regulations.
           </p>
         </div>
       </div>
@@ -209,62 +456,63 @@
 </section>
 
 
-<!-- TAX HELP TOOLS SECTION -->
-<section class="tax-help-section py-5">
-  <div class="container">
-    <h2 class="text-center tax-help-title mb-5">
-      We can help you get ready for tax time
-    </h2>
-    <div class="row justify-content-center g-4">
-      <!-- Card 1 -->
-      <div class="col-md-4">
-        <div class="tax-help-card card border rounded-4 text-center p-4">
-          <div class="mb-3">
-            <img src="https://cdn-icons-png.flaticon.com/512/3349/3349903.png" alt="Calculator" style="height:48px;">
+  <!-- TAX HELP TOOLS SECTION -->
+  <section class="tax-help-section py-5">
+    <div class="container">
+      <h2 class="text-center tax-help-title mb-5 reveal-on-scroll">
+        We can help you get ready for tax time
+      </h2>
+      <div class="row justify-content-center g-4">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="tax-help-card card border rounded-4 text-center p-4 reveal-on-scroll">
+            <div class="mb-3">
+              <img src="https://cdn-icons-png.flaticon.com/512/3349/3349903.png" alt="Calculator" style="height:48px;">
+            </div>
+            <h5 class="fw-semibold mb-2">Claim your free tax estimate today</h5>
+            <p class="small mb-3 text-muted">
+              See your approximate refund or amount due before you decide to file with us.
+            </p>
+            <a href="javascript:void(0)" class="fw-bold tax-link">Request free estimation</a>
           </div>
-          <h5 class="fw-semibold mb-2">Get an estimate of this year's tax refund</h5>
-          <p class="small mb-3 text-muted">
-            Use our TaxCaster calculator to preview your refund, or see what you’ll owe.
-          </p>
-          <a href="#" class="fw-bold tax-link">Estimate your taxes</a>
         </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="col-md-4">
-        <div class="tax-help-card card border rounded-4 h-100 text-center p-4">
-          <div class="mb-3">
-            <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Checklist" style="height:48px;">
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="tax-help-card card border rounded-4 h-100 text-center p-4 reveal-on-scroll delay-1">
+            <div class="mb-3">
+              <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Checklist" style="height:48px;">
+            </div>
+            <h5 class="fw-semibold mb-2">Be prepared with our handy checklist</h5>
+            <p class="small mb-3 text-muted">
+              Keep track of which documents you’ll need for a smooth, stress-free filing.
+            </p>
+            <a href="javascript:void(0)" class="fw-bold tax-link">Get the checklist</a>
           </div>
-          <h5 class="fw-semibold mb-2">Be prepared with our handy checklist</h5>
-          <p class="small mb-3 text-muted">
-            Keep track of which docs you’ll need when it’s time to file taxes.
-          </p>
-          <a href="#" class="fw-bold tax-link">Get the checklist</a>
         </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="col-md-4">
-        <div class="tax-help-card card border rounded-4 h-100 text-center p-4">
-          <div class="mb-3">
-            <img src="https://cdn-icons-png.flaticon.com/512/4208/4208392.png" alt="Videos" style="height:48px;">
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="tax-help-card card border rounded-4 h-100 text-center p-4 reveal-on-scroll delay-2">
+            <div class="mb-3">
+              <img src="https://cdn-icons-png.flaticon.com/512/4208/4208392.png" alt="Videos" style="height:48px;">
+            </div>
+            <h5 class="fw-semibold mb-2">Tax tips, guides, and videos</h5>
+            <p class="small mb-3 text-muted">
+              Learn how US taxes work so every year becomes easier than the last.
+            </p>
+            <a href="javascript:void(0)" class="fw-bold tax-link d-block mt-auto">Start learning</a>
           </div>
-          <h5 class="fw-semibold mb-2">Tax tips, guides, and videos</h5>
-          <p class="small mb-3 text-muted">
-            Everything you need to know about taxes that you didn’t learn in school.
-          </p>
-          <a href="#" class="fw-bold tax-link d-block mt-auto">Start learning</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<!-- Toast (in-page) -->
-<div class="global-toast-wrapper position-fixed top-0 end-0 p-3">
-  <div *ngIf="toastVisible" class="toast show text-white" [ngClass]="toastType === 'success' ? 'bg-success' : 'bg-danger'">
-    <div class="toast-body">
-      {{ toastMessage }}
+  <!-- Toast (in-page) -->
+  <div class="global-toast-wrapper position-fixed top-0 end-0 p-3">
+    <div *ngIf="toastVisible" class="toast show text-white"
+         [ngClass]="toastType === 'success' ? 'bg-success' : 'bg-danger'">
+      <div class="toast-body">
+        {{ toastMessage }}
+      </div>
     </div>
   </div>
 </div>

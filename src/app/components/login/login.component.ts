@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     private auth: AuthService,
     private elRef: ElementRef,
     private renderer: Renderer2
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -134,12 +134,16 @@ export class LoginComponent implements OnInit, AfterViewInit {
             this.showVerifiedIndicator = true;
             setTimeout(() => this.showVerifiedIndicator = false, 3500);
             this.f['password'].reset();
-            // TODO: store token & redirect
+
+            // 🔥 Full-page redirect to another application
+            window.location.href = 'http://localhost:52370/dashboard';
+            // or: window.location.assign('http://localhost:52370/dashboard');
           } else {
             const msg = res && res.message ? res.message : 'Login failed';
             this.showToast(msg, 'error');
           }
-        },
+        }
+        ,
         error: (err) => {
           const serverMsg = err?.error?.message || err?.message || 'Server error, please try again';
           this.showToast(serverMsg, 'error');

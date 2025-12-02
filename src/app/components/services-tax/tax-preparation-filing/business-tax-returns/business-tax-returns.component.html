@@ -1,0 +1,323 @@
+<section id="business-tax-returns" class="service-page-main py-5">
+  <div class="container">
+    <!-- Header block -->
+    <div
+      class="d-flex flex-column flex-lg-row align-items-center rounded-4 mb-5 p-4 gap-5"
+    >
+      <div class="flex-fill">
+        <h1 class="fw-bold mb-1 text-gradient-service">
+          <i class="bi bi-diagram-3 me-2"></i>
+          Business Tax Returns (1120 / 1065)
+        </h1>
+        <div class="service-short-desc lead text-dark mb-3">
+          Preparation and filing of U.S. business tax returns for partnerships,
+          corporations, LLCs and sole proprietors – built to keep you compliant
+          and tax-efficient.
+        </div>
+
+        <!-- badges -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+            <i class="bi bi-people-fill me-1"></i>
+            Partnership (1065)
+          </span>
+          <span class="badge bg-info-subtle text-info px-3 py-2 rounded-pill">
+            <i class="bi bi-building me-1"></i>
+            LLC (Single / Multi-Member)
+          </span>
+          <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">
+            <i class="bi bi-bank2 me-1"></i>
+            C-Corporation (1120)
+          </span>
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">
+            <i class="bi bi-diagram-3-fill me-1"></i>
+            S-Corporation (1120S)
+          </span>
+          <span class="badge bg-secondary-subtle text-secondary px-3 py-2 rounded-pill">
+            <i class="bi bi-person-workspace me-1"></i>
+            Sole Proprietor (Schedule C)
+          </span>
+        </div>
+      </div>
+
+     
+    </div>
+
+    <!-- SIDE TABS (same style as Individual Taxes) -->
+    <div class="individual-tabs-wrapper mb-5">
+      <div class="row g-4 align-items-stretch">
+        <!-- Left: tab list -->
+        <div class="col-lg-4">
+          <div class="indiv-tab-list rounded-4 shadow-sm">
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeBizTab === 'partnership'"
+              (click)="setBizTab('partnership')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Partnership</span>
+                <small class="tab-sub">Form 1065</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeBizTab === 'llc'"
+              (click)="setBizTab('llc')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Limited Liability Company</span>
+                <small class="tab-sub">LLC</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeBizTab === 'ccorp'"
+              (click)="setBizTab('ccorp')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">C-Corporation</span>
+                <small class="tab-sub">Form 1120</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeBizTab === 'scorp'"
+              (click)="setBizTab('scorp')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">S-Corporation</span>
+                <small class="tab-sub">Form 1120S</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeBizTab === 'sole'"
+              (click)="setBizTab('sole')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Sole Proprietorship</span>
+                <small class="tab-sub">Schedule C</small>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: tab content -->
+        <div class="col-lg-8">
+          <div class="indiv-tab-panel rounded-4 shadow-sm">
+            <!-- Partnership -->
+            <ng-container *ngIf="activeBizTab === 'partnership'">
+              <h4 class="panel-title">Partnership Tax Return (Form 1065)</h4>
+              <p class="panel-intro">
+                For two or more owners who share profits and losses. We prepare
+                the partnership return plus K-1s for each partner.
+              </p>
+              <ul class="panel-list">
+                <li>K-1 preparation for all partners.</li>
+                <li>Income, expenses and allocations by ownership %.</li>
+                <li>Capital accounts, contributions and distributions.</li>
+                <li>Support for new and converting partnerships.</li>
+              </ul>
+            </ng-container>
+
+            <!-- LLC -->
+            <ng-container *ngIf="activeBizTab === 'llc'">
+              <h4 class="panel-title">Limited Liability Company (LLC)</h4>
+              <p class="panel-intro">
+                Whether your LLC is taxed as a disregarded entity, partnership
+                or S-Corp, we file the correct return and keep your books clean.
+              </p>
+              <ul class="panel-list">
+                <li>Single-member (Schedule C) and multi-member (1065) filings.</li>
+                <li>Bookkeeping tidy-up and expense categorisation.</li>
+                <li>Separate tracking of member draws vs. payroll.</li>
+                <li>Guidance on when to elect S-Corporation status.</li>
+              </ul>
+            </ng-container>
+
+            <!-- C-Corp -->
+            <ng-container *ngIf="activeBizTab === 'ccorp'">
+              <h4 class="panel-title">C-Corporation (Form 1120)</h4>
+              <p class="panel-intro">
+                Ideal for companies planning to reinvest profits or raise
+                capital. We keep your corporate return fully compliant.
+              </p>
+              <ul class="panel-list">
+                <li>Form 1120 with balance sheet and P&amp;L schedules.</li>
+                <li>Officer compensation and dividend planning.</li>
+                <li>Depreciation, Section 179 and bonus depreciation review.</li>
+                <li>Multi-state filings and apportionment where required.</li>
+              </ul>
+            </ng-container>
+
+            <!-- S-Corp -->
+            <ng-container *ngIf="activeBizTab === 'scorp'">
+              <h4 class="panel-title">S-Corporation (Form 1120S)</h4>
+              <p class="panel-intro">
+                Popular with small businesses seeking payroll + distribution
+                flexibility. We help maintain reasonable compensation and clean
+                K-1s.
+              </p>
+              <ul class="panel-list">
+                <li>1120S preparation with shareholder K-1s.</li>
+                <li>Reasonable salary vs. distributions guidance.</li>
+                <li>Tracking retained earnings and shareholder basis.</li>
+                <li>Help with S-Election (Form 2553) where applicable.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Sole Proprietor -->
+            <ng-container *ngIf="activeBizTab === 'sole'">
+              <h4 class="panel-title">Sole Proprietorship (Schedule C)</h4>
+              <p class="panel-intro">
+                For freelancers and small business owners who file with their
+                individual return. We make sure you claim every legitimate
+                deduction.
+              </p>
+              <ul class="panel-list">
+                <li>Schedule C preparation from your bank/expense records.</li>
+                <li>Home office, vehicle, travel and software expenses.</li>
+                <li>Guidance on separating personal and business spending.</li>
+                <li>Quarterly estimated tax calculations and reminders.</li>
+              </ul>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2-Column content (same structure as Individual page) -->
+    <div class="row gy-5">
+      <!-- Left: What's included & process -->
+      <div class="col-lg-6">
+        <div class="service-highlight-card rounded-4 bg-white shadow-sm p-4 mb-4">
+          <h4 class="fw-semibold text-gradient-service mb-3">
+            <i class="bi bi-ui-checks-grid me-1"></i>
+            What’s Included for Business Returns
+          </h4>
+          <ul class="service-list mb-3">
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Review of bookkeeping, bank feeds and financial statements.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Year-end adjustments, depreciation and owner draws cleanup.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Federal return plus required state and city returns.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Filing extensions where needed and compliance reminders.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Support with basic IRS / state notices tied to your filing.
+            </li>
+          </ul>
+        </div>
+
+        <div class="service-highlight-card rounded-4 bg-gradient-service shadow-sm p-4 mb-4 text-black">
+          <h6 class="fw-bold mb-1">Our Business Filing Process</h6>
+          <ol class="process-list text-black">
+            <li>Collect your financials (books, bank statements, payroll reports).</li>
+            <li>Clarify entity type and ownership structure.</li>
+            <li>Prepare draft returns with tax-saving opportunities highlighted.</li>
+            <li>Walk you through the results and get e-signature approval.</li>
+            <li>E-file returns and provide a complete tax package for your records.</li>
+            <li>Plan next year’s strategy to reduce surprises and improve cashflow.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Right: Highlights + CTA -->
+      <div class="col-lg-6">
+        <div class="row g-3 service-feature-grid">
+          <div class="col-12">
+            <div class="feature-block p-3 rounded-3 shadow-sm d-flex gap-3 align-items-center">
+              <i class="bi bi-building-gear fs-3 text-primary"></i>
+              <div>
+                <div class="fw-semibold">Built for growing businesses</div>
+                <div class="small text-muted">
+                  From first-year startups to established companies with staff and contractors.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="feature-block p-3 rounded-3 shadow-sm d-flex gap-3 align-items-center">
+              <i class="bi bi-file-earmark-lock fs-3 text-success"></i>
+              <div>
+                <div class="fw-semibold">Audit-ready documentation</div>
+                <div class="small text-muted">
+                  Organized workpapers and clear explanations for every major position.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="feature-block p-3 rounded-3 shadow-sm d-flex gap-3 align-items-center">
+              <i class="bi bi-globe-americas fs-3 text-warning"></i>
+              <div>
+                <div class="fw-semibold">Multi-state & remote teams</div>
+                <div class="small text-muted">
+                  We handle nexus, payroll states and remote-first company structures.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="feature-block p-3 rounded-3 shadow-sm d-flex gap-3 align-items-center">
+              <i class="bi bi-cash-coin fs-3 text-info"></i>
+              <div>
+                <div class="fw-semibold">Transparent, percent-based fees</div>
+                <div class="small text-muted">
+                  Clear pricing with no hidden hourly surprises – aligned with your results.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-cta-card text-center mt-4 bg-light p-4 shadow rounded-4">
+          <div class="h5 mb-2 text-gradient-service">
+            Ready to file your Business Tax Return?
+          </div>
+          <a routerLink="/contact-us" class="btn btn-service-gradient px-5 py-2 rounded-pill">
+            Talk to our Business Tax Team
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

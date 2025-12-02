@@ -1,0 +1,234 @@
+<section id="llc-corp-formation" class="service-page-main py-5">
+  <div class="container">
+    <!-- HEADER -->
+    <div
+      class="d-flex flex-column flex-lg-row align-items-center rounded-4 mb-5 p-4 gap-5"
+    >
+      <div class="flex-fill">
+        <h1 class="fw-bold mb-1 text-gradient-service">
+          <i class="bi bi-buildings-fill me-2"></i>
+          LLC / Corporation Formation
+        </h1>
+        <div class="service-short-desc lead text-dark mb-3">
+          End-to-end entity formation for LLCs, C-Corps and S-Corps – for both
+          U.S. residents and foreign owners – including EIN, state filings and
+          structure selection.
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+            <i class="bi bi-geo-alt-fill me-1"></i>
+            U.S. &amp; Nonresident Owners
+          </span>
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">
+            <i class="bi bi-hash me-1"></i>
+            EIN &amp; IRS Registrations
+          </span>
+          <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">
+            <i class="bi bi-diagram-3 me-1"></i>
+            LLC / C-Corp / S-Corp Strategy
+          </span>
+        </div>
+      </div>
+<!-- 
+      <div class="service-illustration flex-shrink-0 text-center">
+        <img
+          src="https://i.pinimg.com/736x/e2/ca/7b/e2ca7b9adf14f5de3c249684c4a5026f.jpg"
+          alt="LLC and corporation formation"
+          class="rounded-4 shadow service-header-img"
+          loading="lazy"
+        />
+      </div> -->
+    </div>
+
+    <!-- SIDE TABS + CONTENT -->
+    <div class="individual-tabs-wrapper mb-5">
+      <div class="row g-4 align-items-stretch">
+        <!-- LEFT: TAB LIST -->
+        <div class="col-lg-4">
+          <div class="indiv-tab-list rounded-4 shadow-sm">
+
+            <!-- For US Residents & Foreigners -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="formationTab === 'owners'"
+              (click)="setFormationTab('owners')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  For U.S. Residents &amp; Foreigners
+                </span>
+                <small class="tab-sub">US nonresident friendly</small>
+              </span>
+            </button>
+
+            <!-- SS4 & EIN -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="formationTab === 'ein'"
+              (click)="setFormationTab('ein')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">SS-4 &amp; Federal Tax EIN</span>
+                <small class="tab-sub">IRS registration</small>
+              </span>
+            </button>
+
+            <!-- Structure Analysis -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="formationTab === 'structure'"
+              (click)="setFormationTab('structure')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  Business Structure Analysis
+                </span>
+                <small class="tab-sub">LLC vs C-Corp vs S-Corp</small>
+              </span>
+            </button>
+
+            <!-- Name availability -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="formationTab === 'name'"
+              (click)="setFormationTab('name')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">Name Availability Search</span>
+                <small class="tab-sub">State databases</small>
+              </span>
+            </button>
+
+            <!-- Secretary of State filings -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="formationTab === 'state'"
+              (click)="setFormationTab('state')"
+            >
+              <span class="check-icon"><i class="bi bi-check2-square"></i></span>
+              <span class="tab-text">
+                <span class="tab-label">
+                  Secretary of State Filings &amp; Fees
+                </span>
+                <small class="tab-sub">Submissions &amp; receipts</small>
+              </span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: TAB CONTENT -->
+        <div class="col-lg-8">
+          <div class="indiv-tab-panel rounded-4 shadow-sm">
+
+            <!-- Owners -->
+            <ng-container *ngIf="formationTab === 'owners'">
+              <h4 class="panel-title">
+                Formation for U.S. Residents &amp; Foreign Owners
+              </h4>
+              <p class="panel-intro">
+                Whether you live in the U.S. or abroad, we help you select and
+                form the right entity structure for your situation.
+              </p>
+              <ul class="panel-list">
+                <li>Support for U.S. citizens, residents and nonresident owners.</li>
+                <li>Guidance on “disregarded entity” vs. multi-member LLCs.</li>
+                <li>Explain U.S. tax impact for foreign owners before formation.</li>
+                <li>Coordinate with ITIN / EIN and banking requirements.</li>
+              </ul>
+            </ng-container>
+
+            <!-- EIN -->
+            <ng-container *ngIf="formationTab === 'ein'">
+              <h4 class="panel-title">SS-4 &amp; Federal Tax EIN Application</h4>
+              <p class="panel-intro">
+                We prepare Form SS-4 and obtain your Employer Identification
+                Number (EIN) directly from the IRS.
+              </p>
+              <ul class="panel-list">
+                <li>Prepare and file SS-4 with correct entity &amp; owner details.</li>
+                <li>Handle EIN requests for both U.S. and foreign owners.</li>
+                <li>Align EIN info with your operating agreement and ownership.</li>
+                <li>Provide EIN confirmation letter for banks and platforms.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Structure Analysis -->
+            <ng-container *ngIf="formationTab === 'structure'">
+              <h4 class="panel-title">
+                Business Structure Analysis – LLC vs C-Corp vs S-Corp
+              </h4>
+              <p class="panel-intro">
+                We compare entity options from a tax, ownership and growth
+                perspective so you can choose confidently.
+              </p>
+              <ul class="panel-list">
+                <li>Review your business model, revenue and long-term goals.</li>
+                <li>Compare tax treatment of LLC, C-Corp and S-Corp structures.</li>
+                <li>Discuss investor readiness, equity, and profit distribution.</li>
+                <li>Provide a clear recommendation with next steps.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Name Search -->
+            <ng-container *ngIf="formationTab === 'name'">
+              <h4 class="panel-title">Name Availability Search</h4>
+              <p class="panel-intro">
+                Avoid rejections and delays by checking name availability
+                before filing.
+              </p>
+              <ul class="panel-list">
+                <li>Search state databases for your preferred business name.</li>
+                <li>Identify conflicts and suggest alternative options.</li>
+                <li>Reserve name where required/available by the state.</li>
+                <li>Ensure name consistency across filings and branding.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Secretary of State -->
+            <ng-container *ngIf="formationTab === 'state'">
+              <h4 class="panel-title">
+                Secretary of State Filings &amp; Fees Submissions
+              </h4>
+              <p class="panel-intro">
+                We handle the full state-level paperwork and fee payments so
+                your entity is properly formed and in good standing.
+              </p>
+              <ul class="panel-list">
+                <li>Prepare and file Articles of Organization / Incorporation.</li>
+                <li>Submit state formation fees and track filing status.</li>
+                <li>Provide stamped/approved documents for your records.</li>
+                <li>Outline ongoing annual report and compliance requirements.</li>
+              </ul>
+            </ng-container>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div class="text-center bg-light p-4  rounded-4">
+      <div class="h5 mb-2 text-gradient-service">
+        Ready to launch your LLC or Corporation the right way?
+      </div>
+      <a
+        routerLink="/contact-us"
+        class="btn btn-service-gradient px-5 py-2 rounded-pill"
+      >
+        Talk to our Entity Formation Team
+        <i class="bi bi-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </div>
+</section>

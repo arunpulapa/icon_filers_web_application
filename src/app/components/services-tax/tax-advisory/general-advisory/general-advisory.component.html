@@ -1,0 +1,253 @@
+<section id="general-advisory" class="service-page-main py-5">
+  <div class="container">
+    <!-- Header block -->
+    <div
+      class="d-flex flex-column flex-lg-row align-items-center rounded-4 mb-5 p-4 gap-5"
+    >
+      <div class="flex-fill">
+        <h1 class="fw-bold mb-1 text-gradient-service">
+          <i class="bi bi-chat-dots-fill me-2"></i>
+          General Advisory
+        </h1>
+        <div class="service-short-desc lead text-dark mb-3">
+          Book time with our tax professionals for general guidance, high-level
+          questions and compliance support — from quick intro calls to deep-dive
+          strategy sessions.
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill">
+            <i class="bi bi-telephone-forward-fill me-1"></i>
+            Intro calls &amp; consultations
+          </span>
+          <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">
+            <i class="bi bi-clipboard-check me-1"></i>
+            Compliance guidance
+          </span>
+          <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">
+            <i class="bi bi-buildings me-1"></i>
+            Secretary of State support
+          </span>
+        </div>
+      </div>
+
+   
+    </div>
+
+    <!-- SIDE TABS -->
+    <div class="individual-tabs-wrapper mb-5">
+      <div class="row g-4 align-items-stretch">
+        <!-- Left: tab list -->
+        <div class="col-lg-4">
+          <div class="indiv-tab-list rounded-4 shadow-sm">
+            <!-- 15 min free call -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeAdvisoryTab === 'intro'"
+              (click)="setAdvisoryTab('intro')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">15 Min Free Intro Call</span>
+                <small class="tab-sub">No tax advice in this call</small>
+              </span>
+            </button>
+
+            <!-- 30 min consultation -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeAdvisoryTab === 'consult30'"
+              (click)="setAdvisoryTab('consult30')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">30 Min EA/CPA Consultation</span>
+                <small class="tab-sub">Targeted questions</small>
+              </span>
+            </button>
+
+            <!-- 60 min consultation -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeAdvisoryTab === 'consult60'"
+              (click)="setAdvisoryTab('consult60')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">60 Min EA/CPA Consultation</span>
+                <small class="tab-sub">Deep-dive planning</small>
+              </span>
+            </button>
+
+            <!-- Secretary of State Renewals -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeAdvisoryTab === 'secretary'"
+              (click)="setAdvisoryTab('secretary')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Secretary of State Renewals</span>
+                <small class="tab-sub">Good standing support</small>
+              </span>
+            </button>
+
+            <!-- All Federal & State Compliances -->
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeAdvisoryTab === 'compliance'"
+              (click)="setAdvisoryTab('compliance')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Federal &amp; State Compliances</span>
+                <small class="tab-sub">Ongoing advisory</small>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: tab content -->
+        <div class="col-lg-8">
+          <div class="indiv-tab-panel rounded-4 shadow-sm">
+            <!-- Intro call -->
+            <ng-container *ngIf="activeAdvisoryTab === 'intro'">
+              <h4 class="panel-title">15 Min Free Introductory Call</h4>
+              <p class="panel-intro">
+                A quick discovery call to understand your situation and confirm
+                whether our services are a good fit. No specific tax advice is
+                provided in this call.
+              </p>
+              <ul class="panel-list">
+                <li>Discuss your goals and current challenges at a high level.</li>
+                <li>Explain which services match your situation.</li>
+                <li>Outline pricing, timelines and next steps.</li>
+                <li>Assign you to the right tax professional or team.</li>
+              </ul>
+              <p class="small text-muted mb-0">
+                *This call is strictly informational. Detailed tax advice and
+                calculations are provided only in paid consultations or
+                engagement services.
+              </p>
+            </ng-container>
+
+            <!-- 30 min consultation -->
+            <ng-container *ngIf="activeAdvisoryTab === 'consult30'">
+              <h4 class="panel-title">30 Min EA/CPA Tax Consultation</h4>
+              <p class="panel-intro">
+                Ideal for 1–2 focused questions or a quick review of a specific
+                tax issue with an Enrolled Agent or CPA.
+              </p>
+              <ul class="panel-list">
+                <li>Clarify IRS letters or notices you received.</li>
+                <li>Get guidance on how to handle a current-year situation.</li>
+                <li>Discuss pros/cons of a specific tax choice or election.</li>
+                <li>Understand what documents you’ll need before filing.</li>
+              </ul>
+            </ng-container>
+
+            <!-- 60 min consultation -->
+            <ng-container *ngIf="activeAdvisoryTab === 'consult60'">
+              <h4 class="panel-title">60 Min EA/CPA Tax Consultation</h4>
+              <p class="panel-intro">
+                A full strategy session for more complex questions, multiple
+                scenarios, or reviewing prior-year filings in detail.
+              </p>
+              <ul class="panel-list">
+                <li>Walk-through of prior returns and current year projections.</li>
+                <li>Scenario planning (salary vs. draw, entity changes, etc.).</li>
+                <li>Discuss international, multi-state, or business questions.</li>
+                <li>Receive a summary of key action points after the call.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Secretary of State renewals -->
+            <ng-container *ngIf="activeAdvisoryTab === 'secretary'">
+              <h4 class="panel-title">Secretary of State Renewals</h4>
+              <p class="panel-intro">
+                Keep your entities in good standing with timely renewals and
+                correct state-level filings.
+              </p>
+              <ul class="panel-list">
+                <li>Calendar tracking for annual reports and renewals.</li>
+                <li>Preparation and filing of Secretary of State forms.</li>
+                <li>Update business addresses, officers and ownership details.</li>
+                <li>Coordinate state filings with your tax and registered agent records.</li>
+              </ul>
+            </ng-container>
+
+            <!-- All Federal & State Compliances -->
+            <ng-container *ngIf="activeAdvisoryTab === 'compliance'">
+              <h4 class="panel-title">All Federal and State Compliances</h4>
+              <p class="panel-intro">
+                Ongoing advisory to help you stay compliant with federal and
+                state requirements — not just at tax time.
+              </p>
+              <ul class="panel-list">
+                <li>Guidance on estimated tax payments and deadlines.</li>
+                <li>Support for extensions, elections and basic disclosures.</li>
+                <li>Coordination between federal and state filing requirements.</li>
+                <li>Periodic check-ins to keep your compliance on track.</li>
+              </ul>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="row gy-4">
+      <div class="col-lg-8">
+        <div class="service-highlight-card rounded-4 bg-white shadow-sm p-4 mb-4">
+          <h4 class="fw-semibold text-gradient-service mb-3">
+            Which advisory option is right for you?
+          </h4>
+          <ul class="service-list mb-3">
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Use the 15-minute intro call to see if we’re a good fit.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Book 30 minutes for focused, tactical questions.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Choose 60 minutes for deeper planning or multi-year issues.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4 d-flex align-items-center">
+        <div class="service-cta-card text-center bg-light p-4 shadow rounded-4 w-100">
+          <div class="h5 mb-2 text-gradient-service">
+            Ready to schedule your advisory session?
+          </div>
+          <a
+            routerLink="/contact-us"
+            class="btn btn-service-gradient px-4 py-2 rounded-pill"
+          >
+            Contact Us to Book
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

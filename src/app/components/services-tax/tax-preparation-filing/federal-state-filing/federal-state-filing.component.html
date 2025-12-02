@@ -1,0 +1,375 @@
+<section id="individual-tax-returns" class="service-page-main py-5">
+  <div class="container">
+    <!-- Header block -->
+    <div
+      class="d-flex flex-column flex-lg-row align-items-center rounded-4 mb-5 p-4 gap-5"
+    >
+      <div class="flex-fill">
+        <h1 class="fw-bold mb-1 text-gradient-service">
+          <i class="bi bi-person-lines-fill me-2"></i>
+          Individual Tax Returns (1040 / 1040NR)
+        </h1>
+        <div class="service-short-desc lead text-dark mb-3">
+          End-to-end preparation and filing of U.S. individual income tax
+          returns for residents, nonresidents and immigrants – focused on
+          maximizing your refund and keeping you fully compliant.
+        </div>
+
+        <!-- badges -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <span
+            class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill"
+          >
+            <i class="bi bi-person-badge-fill me-1"></i>
+            Resident Returns (Form 1040)
+          </span>
+          <span
+            class="badge bg-info-subtle text-info px-3 py-2 rounded-pill"
+          >
+            <i class="bi bi-globe2 me-1"></i>
+            Nonresident Returns (Form 1040NR)
+          </span>
+          <span
+            class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill"
+          >
+            <i class="bi bi-mortarboard-fill me-1"></i>
+            Students &amp; Immigrants (F1, J1, H1B, OPT, EAD)
+          </span>
+        </div>
+      </div>
+
+     
+    </div>
+
+    <!-- NEW: Side tabs block for Residents / Nonresidents / etc. -->
+    <div class="individual-tabs-wrapper mb-5">
+      <div class="row g-4 align-items-stretch">
+        <!-- Left: tab list -->
+        <div class="col-lg-4">
+          <div class="indiv-tab-list rounded-4 shadow-sm">
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeIndivTab === 'residents'"
+              (click)="setIndivTab('residents')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Residents</span>
+                <small class="tab-sub">Form 1040</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeIndivTab === 'nonresidents'"
+              (click)="setIndivTab('nonresidents')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Nonresidents</span>
+                <small class="tab-sub">Form 1040NR</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeIndivTab === 'immigrants'"
+              (click)="setIndivTab('immigrants')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Immigrants &amp; Visa Holders</span>
+                <small class="tab-sub">F1, J1, O1, H1B, EAD</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeIndivTab === 'salary'"
+              (click)="setIndivTab('salary')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Salary Income</span>
+                <small class="tab-sub">W-2 employment</small>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              class="indiv-tab-btn"
+              [class.active]="activeIndivTab === 'contractor'"
+              (click)="setIndivTab('contractor')"
+            >
+              <span class="check-icon">
+                <i class="bi bi-check2-square"></i>
+              </span>
+              <span class="tab-text">
+                <span class="tab-label">Contractor Income</span>
+                <small class="tab-sub">1099 &amp; expenses</small>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: tab content -->
+        <div class="col-lg-8">
+          <div class="indiv-tab-panel rounded-4 shadow-sm">
+            <!-- Residents -->
+            <ng-container *ngIf="activeIndivTab === 'residents'">
+              <h4 class="panel-title">Residents (Form 1040)</h4>
+              <p class="panel-intro">
+                We prepare full-year resident returns covering your salary,
+                investments, dependents and deductions – with a focus on the
+                highest legal refund.
+              </p>
+              <ul class="panel-list">
+                <li>W-2 wages, bonuses and RSUs from U.S. employers.</li>
+                <li>Bank interest, dividends and capital gains reporting.</li>
+                <li>Standard vs itemized deduction optimisation.</li>
+                <li>Child Tax Credit, Education credits and other major credits.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Nonresidents -->
+            <ng-container *ngIf="activeIndivTab === 'nonresidents'">
+              <h4 class="panel-title">Nonresidents (Form 1040NR)</h4>
+              <p class="panel-intro">
+                For students, visitors and professionals who are non-U.S.
+                residents for tax purposes, we ensure only U.S. source income is
+                reported and treaty benefits are correctly applied.
+              </p>
+              <ul class="panel-list">
+                <li>Residency test and treaty benefit review.</li>
+                <li>Reporting of U.S.-source wages, scholarships and stipends.</li>
+                <li>Correct treatment of exempt income and dependents.</li>
+                <li>Guidance on transitioning from 1040NR to 1040 in future years.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Immigrants -->
+            <ng-container *ngIf="activeIndivTab === 'immigrants'">
+              <h4 class="panel-title">
+                Immigrants &amp; Visa Holders (F1, J1, O1, H1B, EAD)
+              </h4>
+              <p class="panel-intro">
+                We specialize in filings for international students and
+                professionals, handling mid-year arrivals, status changes and
+                dual-status situations.
+              </p>
+              <ul class="panel-list">
+                <li>F1 / J1 student and researcher income &amp; scholarship reporting.</li>
+                <li>Visa changes (F1 → H1B, J1 → H1B) and dual-status returns.</li>
+                <li>Foreign income and foreign bank account considerations.</li>
+                <li>Clear guidance on what documents to keep for future years.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Salary income -->
+            <ng-container *ngIf="activeIndivTab === 'salary'">
+              <h4 class="panel-title">Salary Income (W-2 Employees)</h4>
+              <p class="panel-intro">
+                Perfect for single or multiple W-2 jobs, including remote and
+                hybrid workers who may have income across multiple states.
+              </p>
+              <ul class="panel-list">
+                <li>Multiple W-2s from different employers and states.</li>
+                <li>HSA, 401(k), ESPP and stock-based compensation review.</li>
+                <li>State-to-state moves and part-year resident filings.</li>
+                <li>Paycheck review to avoid surprises next tax season.</li>
+              </ul>
+            </ng-container>
+
+            <!-- Contractor income -->
+            <ng-container *ngIf="activeIndivTab === 'contractor'">
+              <h4 class="panel-title">Contractor Income &amp; Expenses</h4>
+              <p class="panel-intro">
+                For freelancers, consultants and gig-workers receiving 1099-NEC
+                or 1099-K, we help you capture every eligible business expense.
+              </p>
+              <ul class="panel-list">
+                <li>Schedule C preparation for freelance and self-employment work.</li>
+                <li>Book-keeping support and expense categorisation.</li>
+                <li>Home office, mileage, software and equipment deductions.</li>
+                <li>Quarterly estimated tax guidance to avoid penalties.</li>
+              </ul>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END side tabs block -->
+
+    <!-- 2-Column content (keep your existing blocks) -->
+    <div class="row gy-5">
+      <!-- Left: Coverage + Process -->
+      <div class="col-lg-6">
+        <!-- What we cover -->
+        <div
+          class="service-highlight-card rounded-4 bg-white shadow-sm p-4 mb-4"
+        >
+          <h4 class="fw-semibold text-gradient-service mb-3">
+            <i class="bi bi-ui-checks-grid me-1"></i>
+            What’s Included
+          </h4>
+          <ul class="service-list mb-3">
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Wages &amp; salary income (multiple W-2s, bonuses, RSUs).
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Bank interest, dividends &amp; capital gains (1099-INT, 1099-DIV,
+              1099-B).
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Student income and scholarships for F1 / J1 visa holders.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Side-gig / freelancer income &amp; expenses (1099-NEC / 1099-K,
+              Schedule C).
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Claiming dependents, Education, Child Tax &amp; other major
+              credits.
+            </li>
+            <li>
+              <i class="bi bi-check2-circle me-2 text-success"></i>
+              Multi-state filing where you lived or worked in more than one
+              state.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Process -->
+        <div
+          class="service-highlight-card rounded-4 bg-gradient-service shadow-sm p-4 mb-4 text-black"
+        >
+          <h6 class="fw-bold mb-1">
+            How Your Individual Return Is Prepared
+          </h6>
+          <ol class="process-list text-black">
+            <li>We collect your W-2s, 1099s and other tax documents.</li>
+            <li>
+              Determine correct residency (1040 vs 1040NR) and filing status.
+            </li>
+            <li>
+              Enter income, deductions &amp; credits to maximize your refund.
+            </li>
+            <li>
+              Review the return with you and explain your refund or tax due.
+            </li>
+            <li>
+              E-file the return and share a copy plus next-year planning tips.
+            </li>
+            <li>
+              Support with basic IRS/state notices related to this filing.
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Right: Highlights + CTA -->
+    <!-- Right: Highlights + CTA -->
+<div class="col-lg-6">
+  <div class="row g-3 service-feature-grid">
+
+    <!-- Block 1 -->
+    <div class="col-12">
+      <div
+        class="feature-block p-3 rounded-3 shadow-sm d-flex gap-3 align-items-center"
+      >
+        <i class="bi bi-question-circle fs-3 text-primary"></i>
+        <div>
+          <div class="fw-semibold">New to U.S. taxes?</div>
+          <div class="small text-muted">
+            Step-by-step guidance for first-time filers, students and
+            recent immigrants.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="col-12">
+      <div
+        class="feature-block p-3 rounded-3 shadow-sm d-flex gap-3 align-items-center"
+      >
+        <i class="bi bi-graph-up-arrow fs-3 text-success"></i>
+        <div>
+          <div class="fw-semibold">Investments, RSUs &amp; Crypto Covered</div>
+          <div class="small text-muted">
+            Correct reporting for brokerage accounts, stock plans and
+            basic crypto trades.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="col-12">
+      <div
+        class="feature-block p-3 rounded-3 shadow-sm d-flex gap-3 align-items-center"
+      >
+        <i class="bi bi-briefcase fs-3 text-warning"></i>
+        <div>
+          <div class="fw-semibold">Side-Gig &amp; Freelancer Support</div>
+          <div class="small text-muted">
+            Help organizing expenses and understanding what you can
+            legally claim.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 4 -->
+    <div class="col-12">
+      <div
+        class="feature-block p-3 rounded-3 shadow-sm d-flex gap-3 align-items-center"
+      >
+        <i class="bi bi-emoji-smile fs-3 text-info"></i>
+        <div>
+          <div class="fw-semibold">Refund-Focused Approach</div>
+          <div class="small text-muted">
+            We aim for your best possible refund while staying fully
+            compliant with IRS rules.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="service-cta-card text-center mt-4 bg-light p-4 shadow rounded-4">
+    <div class="h5 mb-2 text-gradient-service">
+      Ready to file your Individual Tax Return?
+    </div>
+    <a
+      routerLink="/contact-us"
+      class="btn btn-service-gradient px-5 py-2 rounded-pill"
+    >
+      Start Your 1040 / 1040NR Filing
+      <i class="bi bi-arrow-right ms-2"></i>
+    </a>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
