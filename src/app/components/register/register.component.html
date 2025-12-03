@@ -1,51 +1,54 @@
 <section class="signup-section d-flex align-items-center justify-content-center py-5">
+    
+
+
   <div class="container position-relative">
-    <!-- 🔔 Toasts -->
-    <div aria-live="polite" aria-atomic="true" class="position-absolute top-0 end-0 p-3">
-      <div class="toast-container">
+     <!-- 🔔 Toast Wrapper (fixed top-right) -->
+<div class="toast-wrapper position-fixed top-24 end-0 p-3" style="z-index: 1080;margin-top: 30px;">
+  <div class="toast-container">
 
-        <!-- ✅ Success Toast -->
-        <div
-          *ngIf="serverSuccess"
-          class="toast show align-items-center text-bg-success border-0 mb-2"
-          role="alert"
-        >
-          <div class="d-flex">
-            <div class="toast-body">
-              <i class="bi bi-check-circle-fill me-2"></i>
-              {{ serverSuccess }}
-            </div>
-            <button
-              type="button"
-              class="btn-close btn-close-white me-2 m-auto"
-              aria-label="Close"
-              (click)="serverSuccess = null"
-            ></button>
-          </div>
+    <!-- ✅ SUCCESS TOAST -->
+    <div
+      *ngIf="serverSuccess"
+      class="toast show text-bg-success border-0"
+      role="alert"
+    >
+      <div class="d-flex">
+        <div class="toast-body">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          {{ serverSuccess }}
         </div>
-
-        <!-- ❌ Error Toast -->
-        <div
-          *ngIf="serverError"
-          class="toast show align-items-center text-bg-danger border-0"
-          role="alert"
-        >
-          <div class="d-flex">
-            <div class="toast-body">
-              <i class="bi bi-exclamation-triangle-fill me-2"></i>
-              {{ serverError }}
-            </div>
-            <button
-              type="button"
-              class="btn-close btn-close-white me-2 m-auto"
-              aria-label="Close"
-              (click)="serverError = null"
-            ></button>
-          </div>
-        </div>
-
+        <button
+          type="button"
+          class="btn-close btn-close-white me-2 m-auto"
+          aria-label="Close"
+          (click)="serverSuccess = null"
+        ></button>
       </div>
     </div>
+
+    <!-- ❌ ERROR TOAST -->
+    <div
+      *ngIf="serverError"
+      class="toast show text-bg-danger border-0"
+      role="alert"
+    >
+      <div class="d-flex">
+        <div class="toast-body">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i>
+          {{ serverError }}
+        </div>
+        <button
+          type="button"
+          class="btn-close btn-close-white me-2 m-auto"
+          aria-label="Close"
+          (click)="serverError = null"
+        ></button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-6">

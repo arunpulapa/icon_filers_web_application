@@ -17,7 +17,7 @@ export interface LoginResponse {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private base = 'https://localhost:7255/api/Auth';
+  private base = 'https://aspnetclusters-205348-0.cloudclusters.net/api/Auth';
 
   constructor(private http: HttpClient) {}
 

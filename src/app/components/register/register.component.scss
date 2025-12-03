@@ -1,24 +1,45 @@
 .signup-section {
-background-image: url('https://i.pinimg.com/736x/45/ea/5f/45ea5fca501137da0b1648ec29f0a8cf.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
   position: relative;
-  
+  min-height: 100vh;
+  overflow: hidden;
 }
-.signup-section-signup-section::before {
+
+/* Blurred background image behind content */
+.signup-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('https://i.pinimg.com/736x/45/ea/5f/45ea5fca501137da0b1648ec29f0a8cf.jpg');
+  background-image: url("https://i.pinimg.com/736x/45/ea/5f/45ea5fca501137da0b1648ec29f0a8cf.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: blur(6px);          /* blur strength */
+  transform: scale(1.08);     /* avoids blurred edges */
+  z-index: -1;                /* behind everything */
+  opacity: 0.92;              /* slight dimming */
+}
 
-  filter: blur(6px);          /* 👈 ADJUST BLUR HERE */
-  transform: scale(1.08);     /* avoids blur cropping edges */
-  z-index: -1;                /* keep it behind content */
-  opacity: 0.92;              /* slight dimming, optional */
+/* TOASTS */
+.toast-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2000;
+  max-width: 320px;
+  width: calc(100% - 40px); /* prevents cutting on narrow screens */
+}
+
+.toast {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* center top on very small screens so it never goes off-screen */
+@media (max-width: 575.98px) {
+  .toast-wrapper {
+    right: 50%;
+    transform: translateX(50%); /* keep it inside the viewport */
+  }
 }
 .signup-card {
   background: #fff;

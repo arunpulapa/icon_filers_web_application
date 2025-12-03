@@ -7,8 +7,8 @@ interface RegisterRequest {
   lastName: string;
   email: string;
   password: string;
-  phoneNumber: string;
-  alternatePhoneNumber?: string;
+  phone: string;
+  role: string;
 }
 
 @Component({
@@ -17,12 +17,14 @@ interface RegisterRequest {
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  private apiBaseUrl = 'https://localhost:7255/api';
+  // 👇 Point directly to /api/Auth
+  private apiBaseUrl = 'https://aspnetclusters-205348-0.cloudclusters.net/api/Auth';
 
   isSubmitting = false;
   serverError: string | null = null;
   serverSuccess: string | null = null;
 
+  // UI model (can still keep phoneNumber / alternatePhoneNumber here)
   model = {
     firstName: '',
     lastName: '',
@@ -36,12 +38,10 @@ export class RegisterComponent {
   constructor(private http: HttpClient) {}
 
   private resetFormAndModel(form: NgForm) {
-    // Reset form state + values
     form.resetForm({
       acceptTerms: false
     });
 
-    // Reset model object (keeps binding clean)
     this.model = {
       firstName: '',
       lastName: '',
@@ -54,47 +54,45 @@ export class RegisterComponent {
   }
 
   onSubmit(form: NgForm) {
-    if (form.invalid) {
+    if (form.invalid || !this.model.acceptTerms) {
       form.form.markAllAsTouched();
       return;
     }
 
+    // 👇 Match Swagger: { firstName, lastName, email, password, phone, role }
     const payload: RegisterRequest = {
       firstName: this.model.firstName.trim(),
       lastName: this.model.lastName.trim(),
       email: this.model.email.trim(),
       password: this.model.password,
-      phoneNumber: this.model.phoneNumber.trim(),
-      alternatePhoneNumber: this.model.alternatePhoneNumber?.trim() || undefined
+      phone: this.model.phoneNumber.trim(),
+      role: 'User' // or 'Admin' / whatever your backend expects
     };
 
     this.isSubmitting = true;
     this.serverError = null;
     this.serverSuccess = null;
 
-    this.http.post(`${this.apiBaseUrl}/Clients/signup`, payload).subscribe({
+    // 👇 Correct endpoint: POST /api/Auth/register
+    this.http.post(`${this.apiBaseUrl}/register`, payload).subscribe({
       next: () => {
         this.isSubmitting = false;
 
-        // ✅ success toast
         this.serverSuccess = 'Account created successfully.';
         setTimeout(() => (this.serverSuccess = null), 4000);
 
-        // ✅ clear form + model
         this.resetFormAndModel(form);
-
         window.scrollTo({ top: 0, behavior: 'smooth' });
       },
       error: (err) => {
         this.isSubmitting = false;
 
-        // ❌ error toast
-        // this.serverError =
-        //   err?.error?.message || 'Something went wrong. Please try again.';
-        // setTimeout(() => (this.serverError = null), 5000);
+        this.serverError =
+          err?.error?.message || 'Something went wrong. Please try again.';
+        setTimeout(() => (this.serverError = null), 5000);
 
-        // ✅ also clear form + model on error (as you requested)
-        this.resetFormAndModel(form);
+        // if you don't want to clear form on error, remove next line
+        // this.resetFormAndModel(form);
       }
     });
   }
