@@ -17,7 +17,6 @@ interface RegisterRequest {
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  // base API url
   private apiBaseUrl = 'https://localhost:7255/api';
 
   isSubmitting = false;
@@ -36,56 +35,67 @@ export class RegisterComponent {
 
   constructor(private http: HttpClient) {}
 
-onSubmit(form: NgForm) {
-  if (form.invalid) {
-    form.form.markAllAsTouched();
-    return;
+  private resetFormAndModel(form: NgForm) {
+    // Reset form state + values
+    form.resetForm({
+      acceptTerms: false
+    });
+
+    // Reset model object (keeps binding clean)
+    this.model = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      phoneNumber: '',
+      alternatePhoneNumber: '',
+      acceptTerms: false
+    };
   }
 
-  const payload: RegisterRequest = {
-    firstName: this.model.firstName.trim(),
-    lastName: this.model.lastName.trim(),
-    email: this.model.email.trim(),
-    password: this.model.password,
-    phoneNumber: this.model.phoneNumber.trim(),
-    alternatePhoneNumber: this.model.alternatePhoneNumber?.trim() || undefined
-  };
-
-  this.isSubmitting = true;
-  this.serverError = null;
-  this.serverSuccess = null;
-
-  this.http.post(`${this.apiBaseUrl}/Clients/signup`, payload).subscribe({
-    next: (res) => {
-      this.isSubmitting = false;
-      this.serverSuccess = 'Account created successfully.';
-
-      // 🔥 RESET FORM
-      form.resetForm(); // resets validators + fields
-      
-      // 🔥 RESET MODEL
-      this.model = {
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        phoneNumber: '',
-        alternatePhoneNumber: '',
-        acceptTerms: false
-      };
-
-      // OPTIONAL → After reset, scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      // OPTIONAL → Redirect user
-      // this.router.navigate(['/login']);
-    },
-    error: (err) => {
-      this.isSubmitting = false;
-      console.error(err);
-      this.serverError = err?.error?.message || 'Something went wrong. Please try again.';
+  onSubmit(form: NgForm) {
+    if (form.invalid) {
+      form.form.markAllAsTouched();
+      return;
     }
-  });
-}
 
+    const payload: RegisterRequest = {
+      firstName: this.model.firstName.trim(),
+      lastName: this.model.lastName.trim(),
+      email: this.model.email.trim(),
+      password: this.model.password,
+      phoneNumber: this.model.phoneNumber.trim(),
+      alternatePhoneNumber: this.model.alternatePhoneNumber?.trim() || undefined
+    };
+
+    this.isSubmitting = true;
+    this.serverError = null;
+    this.serverSuccess = null;
+
+    this.http.post(`${this.apiBaseUrl}/Clients/signup`, payload).subscribe({
+      next: () => {
+        this.isSubmitting = false;
+
+        // ✅ success toast
+        this.serverSuccess = 'Account created successfully.';
+        setTimeout(() => (this.serverSuccess = null), 4000);
+
+        // ✅ clear form + model
+        this.resetFormAndModel(form);
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+      error: (err) => {
+        this.isSubmitting = false;
+
+        // ❌ error toast
+        // this.serverError =
+        //   err?.error?.message || 'Something went wrong. Please try again.';
+        // setTimeout(() => (this.serverError = null), 5000);
+
+        // ✅ also clear form + model on error (as you requested)
+        this.resetFormAndModel(form);
+      }
+    });
+  }
 }

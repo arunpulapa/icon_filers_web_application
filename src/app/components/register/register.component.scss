@@ -1,7 +1,24 @@
 .signup-section {
-  min-height: 90vh;
-  background: linear-gradient(118deg,#7ed8da 0%,#ebe7f6 90%,#fff 100%);
+background-image: url('https://i.pinimg.com/736x/45/ea/5f/45ea5fca501137da0b1648ec29f0a8cf.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   position: relative;
+  
+}
+.signup-section-signup-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('https://i.pinimg.com/736x/45/ea/5f/45ea5fca501137da0b1648ec29f0a8cf.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(6px);          /* 👈 ADJUST BLUR HERE */
+  transform: scale(1.08);     /* avoids blur cropping edges */
+  z-index: -1;                /* keep it behind content */
+  opacity: 0.92;              /* slight dimming, optional */
 }
 .signup-card {
   background: #fff;

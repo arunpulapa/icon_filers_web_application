@@ -90,20 +90,26 @@
 }
 
 /* ----------------- Brand (TEXT) ----------------- */
-.brand {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
-}
-
 .brand-name {
   font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.18em;
+  font-size: 1.1rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #0b1f3f;
+  background: linear-gradient(120deg, #0f172a, #2563eb, #22c55e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 18px rgba(37, 99, 235, 0.5);
+  white-space: nowrap;
+  transition: 0.2s ease;
 }
+
+.brand:hover .brand-name {
+  filter: brightness(1.1);
+  text-shadow: 0 0 26px rgba(59, 130, 246, 0.8);
+  transform: translateY(-1px);
+}
+
 
 /* ----------------- Center menu ----------------- */
 .nav-links {

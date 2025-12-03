@@ -134,19 +134,18 @@ export class LoginComponent implements OnInit, AfterViewInit {
             this.showVerifiedIndicator = true;
             setTimeout(() => this.showVerifiedIndicator = false, 3500);
             this.f['password'].reset();
-
             // 🔥 Full-page redirect to another application
-            window.location.href = 'http://localhost:52370/dashboard';
+            // window.location.href = 'http://localhost:52370/dashboard';
             // or: window.location.assign('http://localhost:52370/dashboard');
           } else {
             const msg = res && res.message ? res.message : 'Login failed';
-            this.showToast(msg, 'error');
+            this.showToast("login failed", 'error');
           }
         }
         ,
         error: (err) => {
           const serverMsg = err?.error?.message || err?.message || 'Server error, please try again';
-          this.showToast(serverMsg, 'error');
+          this.showToast("login failed", 'error');
         }
       });
   }

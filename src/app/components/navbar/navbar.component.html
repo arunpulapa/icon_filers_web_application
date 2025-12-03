@@ -14,19 +14,25 @@
 <!-- Main navbar -->
 <nav class="app-navbar" [class.scrolled]="isScrolled" role="navigation" aria-label="Main navigation">
   <div class="nav-inner container-fluid d-flex align-items-center justify-content-between">
+    
     <!-- Brand / Logo (TEXT ONLY) -->
     <div class="brand" routerLink="/home" (click)="gotoAndClose('/home')">
       <span class="brand-name">ICON FILERS</span>
     </div>
 
     <!-- Mobile Toggle -->
-    <button class="toggle-btn d-lg-none" [attr.aria-expanded]="!isCollapsed" (click)="toggleCollapse()"
-      aria-label="Toggle menu">
+    <button
+      class="toggle-btn d-lg-none"
+      [attr.aria-expanded]="!isCollapsed"
+      (click)="toggleCollapse()"
+      aria-label="Toggle menu"
+    >
       <i class="bi bi-list fs-3"></i>
     </button>
 
-    <!-- Nav Links -->
+    <!-- Nav Links + Right Auth Buttons -->
     <div class="nav-links d-flex align-items-center" [class.open]="!isCollapsed">
+      <!-- Center menu -->
       <ul class="links-left d-flex flex-column flex-lg-row align-items-lg-center justify-content-lg-center">
         <li>
           <a routerLink="/home" (click)="gotoAndClose('/home')" class="nav-link">HOME</a>
@@ -35,10 +41,15 @@
           <a routerLink="/about-us" (click)="gotoAndClose('/about-us')" class="nav-link">ABOUT US</a>
         </li>
 
-        <!-- ============= SERVICES DROPDOWN (2x2 MEGA MENU) ============= -->
+        <!-- ============= SERVICES DROPDOWN (MEGA MENU) ============= -->
         <li class="dropdown" tabindex="0" [class.open]="servicesOpen">
-          <a class="drop-toggle nav-link" (click)="servicesOpen = !servicesOpen" role="button" aria-haspopup="true"
-            aria-expanded="servicesOpen">
+          <a
+            class="drop-toggle nav-link"
+            (click)="servicesOpen = !servicesOpen"
+            role="button"
+            aria-haspopup="true"
+            [attr.aria-expanded]="servicesOpen"
+          >
             SERVICES <i class="bi bi-caret-down-fill ms-1"></i>
           </a>
           <ul class="dropdown-menu services-mega shadow" [class.show]="servicesOpen">
@@ -116,19 +127,26 @@
       </ul>
 
       <!-- Right side auth buttons -->
-      <div  style="margin-left:50px;">
-        <a class="link-login btn-cta btn btn-outline-primary rounded-pill" style="margin-left: 30px;"
-           routerLink="/login"
-           (click)="gotoAndClose('/login')">
-          <i class="bi bi-lock-fill"></i> Sign in
+       <div style="margin-left: 50px;">
+  <div class="links-right" >
+        <a
+          class="link-login btn-cta btn btn-outline-primary rounded-pill"
+          routerLink="/login"
+          (click)="gotoAndClose('/login')" 
+        >
+          <i class="bi bi-lock-fill me-1"></i> Sign in
         </a>
 
-        <a class="btn-cta btn btn-primary rounded-pill" style="margin-left: 10px;"
-           routerLink="/register"
-           (click)="gotoAndClose('/register')">
+        <a
+          class="btn-cta btn btn-primary rounded-pill"
+          routerLink="/register"
+          (click)="gotoAndClose('/register')"
+        >
           Register
         </a>
       </div>
+       </div>
+    
     </div>
   </div>
 </nav>

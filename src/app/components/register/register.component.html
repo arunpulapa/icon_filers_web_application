@@ -1,5 +1,52 @@
 <section class="signup-section d-flex align-items-center justify-content-center py-5">
-  <div class="container">
+  <div class="container position-relative">
+    <!-- 🔔 Toasts -->
+    <div aria-live="polite" aria-atomic="true" class="position-absolute top-0 end-0 p-3">
+      <div class="toast-container">
+
+        <!-- ✅ Success Toast -->
+        <div
+          *ngIf="serverSuccess"
+          class="toast show align-items-center text-bg-success border-0 mb-2"
+          role="alert"
+        >
+          <div class="d-flex">
+            <div class="toast-body">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              {{ serverSuccess }}
+            </div>
+            <button
+              type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              aria-label="Close"
+              (click)="serverSuccess = null"
+            ></button>
+          </div>
+        </div>
+
+        <!-- ❌ Error Toast -->
+        <div
+          *ngIf="serverError"
+          class="toast show align-items-center text-bg-danger border-0"
+          role="alert"
+        >
+          <div class="d-flex">
+            <div class="toast-body">
+              <i class="bi bi-exclamation-triangle-fill me-2"></i>
+              {{ serverError }}
+            </div>
+            <button
+              type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              aria-label="Close"
+              (click)="serverError = null"
+            ></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-6">
         <div class="signup-card shadow-lg rounded-4 px-4 py-5 position-relative">
@@ -13,12 +60,13 @@
 
           <!-- FORM -->
           <form
-            autocomplete="on"
+            autocomplete="off"
             #signupForm="ngForm"
             (ngSubmit)="onSubmit(signupForm)"
             novalidate
           >
             <div class="row g-3">
+              <!-- FIRST NAME -->
               <div class="col-md-6">
                 <div class="form-floating">
                   <input
@@ -27,13 +75,23 @@
                     id="signupFirstName"
                     name="firstName"
                     [(ngModel)]="model.firstName"
+                    #firstName="ngModel"
                     placeholder="First Name"
                     required
+                    pattern="^[A-Za-z]+(?:[ '][A-Za-z]+)*$"
                   />
                   <label for="signupFirstName"><i class="bi bi-person me-1"></i> First Name</label>
                 </div>
+                <div
+                  *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+                  class="text-danger small mt-1"
+                >
+                  <div *ngIf="firstName.errors?.['required']">First name is required.</div>
+                  <div *ngIf="firstName.errors?.['pattern']">Only letters and spaces allowed.</div>
+                </div>
               </div>
 
+              <!-- LAST NAME -->
               <div class="col-md-6">
                 <div class="form-floating">
                   <input
@@ -42,13 +100,23 @@
                     id="signupLastName"
                     name="lastName"
                     [(ngModel)]="model.lastName"
+                    #lastName="ngModel"
                     placeholder="Last Name"
                     required
+                    pattern="^[A-Za-z]+(?:[ '][A-Za-z]+)*$"
                   />
                   <label for="signupLastName"><i class="bi bi-person-fill me-1"></i> Last Name</label>
                 </div>
+                <div
+                  *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+                  class="text-danger small mt-1"
+                >
+                  <div *ngIf="lastName.errors?.['required']">Last name is required.</div>
+                  <div *ngIf="lastName.errors?.['pattern']">Only letters and spaces allowed.</div>
+                </div>
               </div>
 
+              <!-- EMAIL -->
               <div class="col-md-6">
                 <div class="form-floating">
                   <input
@@ -57,13 +125,23 @@
                     id="signupEmail"
                     name="email"
                     [(ngModel)]="model.email"
+                    #email="ngModel"
                     placeholder="Email"
                     required
+                    email
                   />
                   <label for="signupEmail"><i class="bi bi-envelope me-1"></i> Email</label>
                 </div>
+                <div
+                  *ngIf="email.invalid && (email.dirty || email.touched)"
+                  class="text-danger small mt-1"
+                >
+                  <div *ngIf="email.errors?.['required']">Email is required.</div>
+                  <div *ngIf="email.errors?.['email']">Please enter a valid email address.</div>
+                </div>
               </div>
 
+              <!-- PASSWORD -->
               <div class="col-md-6">
                 <div class="form-floating">
                   <input
@@ -72,13 +150,25 @@
                     id="signupPassword"
                     name="password"
                     [(ngModel)]="model.password"
+                    #password="ngModel"
                     placeholder="Password"
                     required
+                    minlength="6"
                   />
                   <label for="signupPassword"><i class="bi bi-key-fill me-1"></i> Password</label>
                 </div>
+                <div
+                  *ngIf="password.invalid && (password.dirty || password.touched)"
+                  class="text-danger small mt-1"
+                >
+                  <div *ngIf="password.errors?.['required']">Password is required.</div>
+                  <div *ngIf="password.errors?.['minlength']">
+                    Password must be at least 6 characters.
+                  </div>
+                </div>
               </div>
 
+              <!-- PHONE (US +1XXXXXXXXXX) -->
               <div class="col-md-6">
                 <div class="form-floating">
                   <input
@@ -87,13 +177,25 @@
                     id="signupPhone"
                     name="phoneNumber"
                     [(ngModel)]="model.phoneNumber"
+                    #phoneNumber="ngModel"
                     placeholder="Phone Number"
                     required
+                     pattern="^[0-9]{10}$"
                   />
                   <label for="signupPhone"><i class="bi bi-telephone me-1"></i> Phone Number</label>
                 </div>
+                <div
+                  *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)"
+                  class="text-danger small mt-1"
+                >
+                  <div *ngIf="phoneNumber.errors?.['required']">Phone number is required.</div>
+                  <div *ngIf="phoneNumber.errors?.['pattern']">
+                    Enter a valid US number in format +1XXXXXXXXXX.
+                  </div>
+                </div>
               </div>
 
+              <!-- ALT PHONE (optional, same pattern but not required) -->
               <div class="col-md-6">
                 <div class="form-floating">
                   <input
@@ -102,13 +204,28 @@
                     id="signupAltPhone"
                     name="alternatePhoneNumber"
                     [(ngModel)]="model.alternatePhoneNumber"
+                    #alternatePhoneNumber="ngModel"
                     placeholder="Alternate Phone"
+                     pattern="^[0-9]{10}$"
                   />
                   <label for="signupAltPhone"><i class="bi bi-telephone-forward me-1"></i> Alternate Phone</label>
+                </div>
+                <div
+                  *ngIf="
+                    alternatePhoneNumber.invalid &&
+                    alternatePhoneNumber.value &&
+                    (alternatePhoneNumber.dirty || alternatePhoneNumber.touched)
+                  "
+                  class="text-danger small mt-1"
+                >
+                  <div *ngIf="alternatePhoneNumber.errors?.['pattern']">
+                    Enter a valid US number in format +1XXXXXXXXXX.
+                  </div>
                 </div>
               </div>
             </div>
 
+            <!-- TERMS -->
             <div class="mb-3 mt-4 small text-muted">
               <input
                 class="form-check-input me-1"
@@ -116,6 +233,7 @@
                 id="acceptTerms"
                 name="acceptTerms"
                 [(ngModel)]="model.acceptTerms"
+                #acceptTerms="ngModel"
                 required
               />
               <label for="acceptTerms">
@@ -123,7 +241,14 @@
                 <a href="#" class="signup-link fw-semibold">Terms &amp; Privacy Policy</a>
               </label>
             </div>
+            <div
+              *ngIf="acceptTerms.invalid && (acceptTerms.dirty || acceptTerms.touched)"
+              class="text-danger small mb-2"
+            >
+              You must accept the terms to continue.
+            </div>
 
+            <!-- SUBMIT BUTTON -->
             <button
               type="submit"
               class="btn btn-gradient-signup px-4 py-2 w-100 rounded-pill mb-2"
