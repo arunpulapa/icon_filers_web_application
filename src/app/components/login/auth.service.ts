@@ -8,6 +8,7 @@ export interface LoginRequest {
 }
 
 export interface LoginResponse {
+  user: any;
   // adjust according to your backend response shape
   token?: string;
   message?: string;
