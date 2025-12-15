@@ -4,7 +4,7 @@ import { AuthService, LoginRequest } from './auth.service';
 import { finalize } from 'rxjs/operators';
 
 // 🔥 INTERNAL DASHBOARD BASE URL
-const INTERNAL_BASE_URL = 'https://app-iconfilers.netlify.app/'; 
+const INTERNAL_BASE_URL = 'http://localhost:4200/'; 
 // or use your real internal server domain (I can set it for you)
 
 @Component({
@@ -20,6 +20,9 @@ export class LoginComponent implements OnInit, AfterViewInit {
   toastMessage = '';
   toastType: 'success' | 'error' = 'success';
   showVerifiedIndicator = false;
+  resetForm!: FormGroup;
+showReset = false;
+
 
   constructor(
     private fb: FormBuilder,
@@ -34,11 +37,21 @@ export class LoginComponent implements OnInit, AfterViewInit {
       password: ['', [Validators.required, Validators.minLength(4)]],
       remember: [false]
     });
+    this.resetForm = this.fb.group({
+  email: ['', [Validators.required, Validators.email]],
+  newPassword: ['', [Validators.required, Validators.minLength(6)]]
+});
+
   }
 
   ngAfterViewInit(): void {
     setTimeout(() => this.syncNativeInputsToForm(), 250);
   }
+
+  openReset() {
+  this.showReset = true;
+}
+
 
   private syncNativeInputsToForm() {
     try {
@@ -106,6 +119,34 @@ export class LoginComponent implements OnInit, AfterViewInit {
         }
       });
   }
+
+  submitReset() {
+  if (this.resetForm.invalid) {
+    this.showToast('Please enter valid details', 'error');
+    return;
+  }
+
+  const payload = {
+    email: this.resetForm.value.email.trim(),
+    newPassword: this.resetForm.value.newPassword
+  };
+
+  this.loading = true;
+
+  this.auth.resetPassword(payload)
+    .pipe(finalize(() => this.loading = false))
+    .subscribe({
+      next: () => {
+        this.showToast('Password reset successful. Please login.', 'success');
+        this.showReset = false;
+        this.resetForm.reset();
+      },
+      error: (err) => {
+        this.showToast(err?.error?.message || 'Reset failed', 'error');
+      }
+    });
+}
+
 
   showToast(message: string, type: 'success' | 'error') {
     this.toastMessage = message;

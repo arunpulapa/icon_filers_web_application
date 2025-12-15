@@ -9,21 +9,26 @@ export interface LoginRequest {
 
 export interface LoginResponse {
   user: any;
-  // adjust according to your backend response shape
   token?: string;
   message?: string;
   success?: boolean;
-  // any other fields...
 }
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  // base url
-  private base = 'https://aspnetclusters-205348-0.cloudclusters.net/api/Auth';
+
+  private base = 'https://iconfilers.club/IconFilers/api/Auth';
 
   constructor(private http: HttpClient) {}
 
   login(payload: LoginRequest): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.base}/login`, payload);
+  }
+
+  resetPassword(payload: { email: string; newPassword: string }): Observable<any> {
+    return this.http.post<any>(
+      `${this.base}/reset-password`,
+      payload
+    );
   }
 }

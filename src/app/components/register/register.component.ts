@@ -18,7 +18,7 @@ interface RegisterRequest {
 })
 export class RegisterComponent {
   // 👇 Point directly to /api/Auth
-  private apiBaseUrl = 'https://aspnetclusters-205348-0.cloudclusters.net/api/Auth';
+  private apiBaseUrl = 'https://iconfilers.club/IconFilers/api/Auth';
 
   isSubmitting = false;
   serverError: string | null = null;

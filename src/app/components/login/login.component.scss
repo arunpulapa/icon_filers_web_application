@@ -1,6 +1,6 @@
 .login-section-login-screen::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
   background-image: url('https://i.pinimg.com/736x/45/ea/5f/45ea5fca501137da0b1648ec29f0a8cf.jpg');
   background-size: cover;
@@ -164,4 +164,13 @@
 /* Optional: stack multiple toasts */
 .app-toast + .app-toast {
   margin-top: 12px;
+}
+.reset-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20001;
+  width: 100%;
+  max-width: 420px;
 }
