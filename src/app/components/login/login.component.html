@@ -37,12 +37,7 @@
                 <input formControlName="remember" class="form-check-input" type="checkbox" id="rememberLogin">
                 <label class="form-check-label small text-muted" for="rememberLogin">Remember me</label>
               </div>
-             <a href="javascript:void(0)"
-   (click)="openReset()"
-   class="text-primary small fw-semibold login-link">
-  Forgot Password?
-</a>
-
+              <a href="#" class="text-primary small fw-semibold login-link">Forgot Password?</a>
             </div>
 
             <button type="submit" class="btn btn-gradient-login px-4 py-2 w-100 rounded-pill mb-2" [disabled]="loading">
@@ -57,7 +52,7 @@
 
           <div class="text-center mt-4">
             <span class="text-muted small">New to Icon Tax?</span>
-            <a routerLink="/register" class="fw-bold login-link ms-2">Create an Account</a>
+            <a href="/register" class="fw-bold login-link ms-2">Create an Account</a>
           </div>
 
           <!-- INLINE VERIFIED INDICATOR (animated) -->
@@ -89,49 +84,4 @@
       </div>
     </div>
   </div>
-
-  <!-- RESET PASSWORD MODAL -->
-<div class="modal-backdrop fade show" *ngIf="showReset"></div>
-
-<div class="reset-modal" *ngIf="showReset">
-  <div class="login-card-login-screen shadow-lg rounded-4 px-4 py-4">
-   <a href="javascript:void(0)"
-   (click)="openReset()"
-   class="text-primary small fw-semibold login-link">
-  Forgot Password?
-</a>
-
-
-    <form [formGroup]="resetForm" (ngSubmit)="submitReset()">
-      <div class="mb-3 form-floating">
-        <input type="email"
-               formControlName="email"
-               class="form-control"
-               placeholder="Email">
-        <label>Email</label>
-      </div>
-
-      <div class="mb-3 form-floating">
-        <input type="password"
-               formControlName="newPassword"
-               class="form-control"
-               placeholder="New Password">
-        <label>New Password</label>
-      </div>
-
-      <button class="btn btn-gradient-login w-100 rounded-pill"
-              type="submit"
-              [disabled]="loading">
-        Reset Password
-      </button>
-
-      <button type="button"
-              class="btn btn-link w-100 mt-2"
-              (click)="showReset=false">
-        Back to Login
-      </button>
-    </form>
-  </div>
-</div>
-
 </section>
